@@ -1,0 +1,7 @@
+./test_opus_api.exe
+./test_opus_api.exe.pdb
+../../testing/test_env.py
+../../.vpython
+bin/run_test_opus_api.bat
+./libc++.dll
+./libc++.dll.pdb

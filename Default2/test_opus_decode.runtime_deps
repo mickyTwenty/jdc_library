@@ -1,0 +1,7 @@
+./test_opus_decode.exe
+./test_opus_decode.exe.pdb
+../../testing/test_env.py
+../../.vpython
+bin/run_test_opus_decode.bat
+./libc++.dll
+./libc++.dll.pdb

@@ -1,0 +1,7 @@
+./test_opus_padding.exe
+./test_opus_padding.exe.pdb
+../../testing/test_env.py
+../../.vpython
+bin/run_test_opus_padding.bat
+./libc++.dll
+./libc++.dll.pdb
