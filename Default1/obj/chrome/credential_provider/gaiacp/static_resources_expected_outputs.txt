@@ -1,0 +1,2 @@
+gen/chrome/credential_provider/gaiacp/grit/gaia_static_resources.h
+gen/chrome/credential_provider/gaiacp/grit/gaia_static_resources.rc

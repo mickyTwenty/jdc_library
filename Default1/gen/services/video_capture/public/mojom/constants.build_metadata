@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/constants.mojom"
+  ]
+}

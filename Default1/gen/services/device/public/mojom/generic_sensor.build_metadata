@@ -1,0 +1,9 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/device/public/mojom/sensor.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/device/public/mojom/sensor_provider.mojom"
+  ]
+}

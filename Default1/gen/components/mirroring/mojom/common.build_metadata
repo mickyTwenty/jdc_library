@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/services/network/public/mojom/mojom_ip_address.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/mirroring/mojom/cast_message_channel.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/mirroring/mojom/session_observer.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/mirroring/mojom/session_parameters.mojom"
+  ]
+}

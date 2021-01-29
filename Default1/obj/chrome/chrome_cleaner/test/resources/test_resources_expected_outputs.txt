@@ -1,0 +1,2 @@
+gen/chrome/chrome_cleaner/test/resources/grit/test_resources.h
+gen/chrome/chrome_cleaner/test/resources/test_resources.rc

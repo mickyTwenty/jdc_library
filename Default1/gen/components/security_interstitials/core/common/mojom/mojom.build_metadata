@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/security_interstitials/core/common/mojom/interstitial_commands.mojom"
+  ]
+}

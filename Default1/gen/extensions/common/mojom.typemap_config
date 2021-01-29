@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "extensions/common/mojom/channel_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//components/version_info:channel"
+    ],
+    "types": [
+      {
+        "cpp": "version_info::Channel",
+        "mojom": "extensions.mojom.Channel"
+      }
+    ]
+  }
+]

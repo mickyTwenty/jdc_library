@@ -1,0 +1,13 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/third_party/blink/public/mojom/tokens/tokens.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/performance_manager/public/mojom/coordination_unit.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/performance_manager/public/mojom/lifecycle.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/performance_manager/public/mojom/v8_contexts.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/performance_manager/public/mojom/web_memory.mojom"
+  ]
+}

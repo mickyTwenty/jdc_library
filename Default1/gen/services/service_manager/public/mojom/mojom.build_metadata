@@ -1,0 +1,15 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/services/service_manager/public/mojom/constants.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/connector.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/interface_provider.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/interface_provider_spec.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/service.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/service_control.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/service_filter.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/service_manager/public/mojom/service_manager.mojom"
+  ]
+}

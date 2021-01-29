@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/metrics/public/mojom/ukm_interface.mojom"
+  ]
+}

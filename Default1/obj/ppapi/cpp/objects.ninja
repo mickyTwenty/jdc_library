@@ -1,0 +1,103 @@
+defines = -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -D_HAS_NODISCARD -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+include_dirs = -I../.. -Igen
+cflags = -fno-delete-null-pointer-checks -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -fcomplete-member-pointers /Gy /FS /bigobj /utf-8 /Zc$:twoPhase /Zc$:sizedDealloc- /X /D__WRL_ENABLE_FUNCTION_STATICS__ -fmsc-version=1916 /Zc$:dllexportInlines- -m64 -msse3 /Brepro -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -Xclang -fdebug-compilation-dir -Xclang . -no-canonical-prefixes /W4 -Wimplicit-fallthrough -Wunreachable-code -Wthread-safety -Wextra-semi /WX /wd4091 /wd4127 /wd4251 /wd4275 /wd4312 /wd4324 /wd4351 /wd4355 /wd4503 /wd4589 /wd4611 /wd4100 /wd4121 /wd4244 /wd4505 /wd4510 /wd4512 /wd4610 /wd4838 /wd4995 /wd4996 /wd4456 /wd4457 /wd4458 /wd4459 /wd4200 /wd4201 /wd4204 /wd4221 /wd4245 /wd4267 /wd4305 /wd4389 /wd4702 /wd4701 /wd4703 /wd4661 /wd4706 /wd4715 -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-nonportable-include-path -Wno-psabi -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-non-c-typedef-for-linkage -Wmax-tokens /Od /Ob0 /GF /Z7 -gcodeview-ghash -Xclang -debug-info-kind=constructor -ftrivial-auto-var-init=pattern /guard$:cf,nochecks /MDd -Xclang -add-plugin -Xclang find-bad-constructs -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare /FIbuild/precompile.h
+cflags_cc = /Fpobj/ppapi/cpp/objects_cc.pch /Yubuild/precompile.h -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-trigraphs /TP /wd4577 /GR- -I../../buildtools/third_party/libc++/trunk/include
+label_name = objects
+target_out_dir = obj/ppapi/cpp
+target_output_name = objects
+
+build obj/ppapi/cpp/objects/precompile.cc.obj: cxx ../../build/precompile.cc
+  cflags_cc = ${cflags_cc} /Ycbuild/precompile.h
+
+build obj/ppapi/cpp/objects/array_output.obj: cxx ../../ppapi/cpp/array_output.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/audio.obj: cxx ../../ppapi/cpp/audio.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/audio_buffer.obj: cxx ../../ppapi/cpp/audio_buffer.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/audio_config.obj: cxx ../../ppapi/cpp/audio_config.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/core.obj: cxx ../../ppapi/cpp/core.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/directory_entry.obj: cxx ../../ppapi/cpp/directory_entry.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_io.obj: cxx ../../ppapi/cpp/file_io.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_ref.obj: cxx ../../ppapi/cpp/file_ref.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_system.obj: cxx ../../ppapi/cpp/file_system.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/fullscreen.obj: cxx ../../ppapi/cpp/fullscreen.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/graphics_2d.obj: cxx ../../ppapi/cpp/graphics_2d.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/graphics_3d.obj: cxx ../../ppapi/cpp/graphics_3d.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/graphics_3d_client.obj: cxx ../../ppapi/cpp/graphics_3d_client.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/host_resolver.obj: cxx ../../ppapi/cpp/host_resolver.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/image_data.obj: cxx ../../ppapi/cpp/image_data.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/input_event.obj: cxx ../../ppapi/cpp/input_event.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/instance.obj: cxx ../../ppapi/cpp/instance.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/instance_handle.obj: cxx ../../ppapi/cpp/instance_handle.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/media_stream_audio_track.obj: cxx ../../ppapi/cpp/media_stream_audio_track.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/media_stream_video_track.obj: cxx ../../ppapi/cpp/media_stream_video_track.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/message_loop.obj: cxx ../../ppapi/cpp/message_loop.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/module.obj: cxx ../../ppapi/cpp/module.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/mouse_cursor.obj: cxx ../../ppapi/cpp/mouse_cursor.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/mouse_lock.obj: cxx ../../ppapi/cpp/mouse_lock.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/net_address.obj: cxx ../../ppapi/cpp/net_address.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/network_list.obj: cxx ../../ppapi/cpp/network_list.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/network_monitor.obj: cxx ../../ppapi/cpp/network_monitor.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/network_proxy.obj: cxx ../../ppapi/cpp/network_proxy.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/rect.obj: cxx ../../ppapi/cpp/rect.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/resource.obj: cxx ../../ppapi/cpp/resource.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/tcp_socket.obj: cxx ../../ppapi/cpp/tcp_socket.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/text_input_controller.obj: cxx ../../ppapi/cpp/text_input_controller.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/udp_socket.obj: cxx ../../ppapi/cpp/udp_socket.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/url_loader.obj: cxx ../../ppapi/cpp/url_loader.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/url_request_info.obj: cxx ../../ppapi/cpp/url_request_info.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/url_response_info.obj: cxx ../../ppapi/cpp/url_response_info.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/var.obj: cxx ../../ppapi/cpp/var.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/var_array.obj: cxx ../../ppapi/cpp/var_array.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/var_array_buffer.obj: cxx ../../ppapi/cpp/var_array_buffer.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/var_dictionary.obj: cxx ../../ppapi/cpp/var_dictionary.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_decoder.obj: cxx ../../ppapi/cpp/video_decoder.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_encoder.obj: cxx ../../ppapi/cpp/video_encoder.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_frame.obj: cxx ../../ppapi/cpp/video_frame.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/view.obj: cxx ../../ppapi/cpp/view.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/vpn_provider.obj: cxx ../../ppapi/cpp/vpn_provider.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/websocket.obj: cxx ../../ppapi/cpp/websocket.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/audio_input_dev.obj: cxx ../../ppapi/cpp/dev/audio_input_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/audio_output_dev.obj: cxx ../../ppapi/cpp/dev/audio_output_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/buffer_dev.obj: cxx ../../ppapi/cpp/dev/buffer_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/crypto_dev.obj: cxx ../../ppapi/cpp/dev/crypto_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/cursor_control_dev.obj: cxx ../../ppapi/cpp/dev/cursor_control_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/device_ref_dev.obj: cxx ../../ppapi/cpp/dev/device_ref_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_chooser_dev.obj: cxx ../../ppapi/cpp/dev/file_chooser_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/ime_input_event_dev.obj: cxx ../../ppapi/cpp/dev/ime_input_event_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/memory_dev.obj: cxx ../../ppapi/cpp/dev/memory_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/printing_dev.obj: cxx ../../ppapi/cpp/dev/printing_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/text_input_dev.obj: cxx ../../ppapi/cpp/dev/text_input_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/url_util_dev.obj: cxx ../../ppapi/cpp/dev/url_util_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_capture_client_dev.obj: cxx ../../ppapi/cpp/dev/video_capture_client_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_capture_dev.obj: cxx ../../ppapi/cpp/dev/video_capture_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_decoder_client_dev.obj: cxx ../../ppapi/cpp/dev/video_decoder_client_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_decoder_dev.obj: cxx ../../ppapi/cpp/dev/video_decoder_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/view_dev.obj: cxx ../../ppapi/cpp/dev/view_dev.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/scriptable_object_deprecated.obj: cxx ../../ppapi/cpp/dev/scriptable_object_deprecated.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/camera_capabilities_private.obj: cxx ../../ppapi/cpp/private/camera_capabilities_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/camera_device_private.obj: cxx ../../ppapi/cpp/private/camera_device_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/ext_crx_file_system_private.obj: cxx ../../ppapi/cpp/private/ext_crx_file_system_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_io_private.obj: cxx ../../ppapi/cpp/private/file_io_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/find_private.obj: cxx ../../ppapi/cpp/private/find_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/flash_font_file.obj: cxx ../../ppapi/cpp/private/flash_font_file.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/host_resolver_private.obj: cxx ../../ppapi/cpp/private/host_resolver_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/instance_private.obj: cxx ../../ppapi/cpp/private/instance_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/isolated_file_system_private.obj: cxx ../../ppapi/cpp/private/isolated_file_system_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/net_address_private.obj: cxx ../../ppapi/cpp/private/net_address_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/pass_file_handle.obj: cxx ../../ppapi/cpp/private/pass_file_handle.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/pdf.obj: cxx ../../ppapi/cpp/private/pdf.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/tcp_server_socket_private.obj: cxx ../../ppapi/cpp/private/tcp_server_socket_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/tcp_socket_private.obj: cxx ../../ppapi/cpp/private/tcp_socket_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/udp_socket_private.obj: cxx ../../ppapi/cpp/private/udp_socket_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/uma_private.obj: cxx ../../ppapi/cpp/private/uma_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/var_private.obj: cxx ../../ppapi/cpp/private/var_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/video_frame_private.obj: cxx ../../ppapi/cpp/private/video_frame_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/x509_certificate_private.obj: cxx ../../ppapi/cpp/private/x509_certificate_private.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/browser_font_trusted.obj: cxx ../../ppapi/cpp/trusted/browser_font_trusted.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/file_chooser_trusted.obj: cxx ../../ppapi/cpp/trusted/file_chooser_trusted.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/paint_aggregator.obj: cxx ../../ppapi/utility/graphics/paint_aggregator.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/paint_manager.obj: cxx ../../ppapi/utility/graphics/paint_manager.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/lock.obj: cxx ../../ppapi/utility/threading/lock.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/simple_thread.obj: cxx ../../ppapi/utility/threading/simple_thread.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+build obj/ppapi/cpp/objects/websocket_api.obj: cxx ../../ppapi/utility/websocket/websocket_api.cc | obj/ppapi/cpp/objects/precompile.cc.obj
+
+build obj/ppapi/cpp/objects.stamp: stamp obj/ppapi/cpp/objects/array_output.obj obj/ppapi/cpp/objects/audio.obj obj/ppapi/cpp/objects/audio_buffer.obj obj/ppapi/cpp/objects/audio_config.obj obj/ppapi/cpp/objects/core.obj obj/ppapi/cpp/objects/directory_entry.obj obj/ppapi/cpp/objects/file_io.obj obj/ppapi/cpp/objects/file_ref.obj obj/ppapi/cpp/objects/file_system.obj obj/ppapi/cpp/objects/fullscreen.obj obj/ppapi/cpp/objects/graphics_2d.obj obj/ppapi/cpp/objects/graphics_3d.obj obj/ppapi/cpp/objects/graphics_3d_client.obj obj/ppapi/cpp/objects/host_resolver.obj obj/ppapi/cpp/objects/image_data.obj obj/ppapi/cpp/objects/input_event.obj obj/ppapi/cpp/objects/instance.obj obj/ppapi/cpp/objects/instance_handle.obj obj/ppapi/cpp/objects/media_stream_audio_track.obj obj/ppapi/cpp/objects/media_stream_video_track.obj obj/ppapi/cpp/objects/message_loop.obj obj/ppapi/cpp/objects/module.obj obj/ppapi/cpp/objects/mouse_cursor.obj obj/ppapi/cpp/objects/mouse_lock.obj obj/ppapi/cpp/objects/net_address.obj obj/ppapi/cpp/objects/network_list.obj obj/ppapi/cpp/objects/network_monitor.obj obj/ppapi/cpp/objects/network_proxy.obj obj/ppapi/cpp/objects/rect.obj obj/ppapi/cpp/objects/resource.obj obj/ppapi/cpp/objects/tcp_socket.obj obj/ppapi/cpp/objects/text_input_controller.obj obj/ppapi/cpp/objects/udp_socket.obj obj/ppapi/cpp/objects/url_loader.obj obj/ppapi/cpp/objects/url_request_info.obj obj/ppapi/cpp/objects/url_response_info.obj obj/ppapi/cpp/objects/var.obj obj/ppapi/cpp/objects/var_array.obj obj/ppapi/cpp/objects/var_array_buffer.obj obj/ppapi/cpp/objects/var_dictionary.obj obj/ppapi/cpp/objects/video_decoder.obj obj/ppapi/cpp/objects/video_encoder.obj obj/ppapi/cpp/objects/video_frame.obj obj/ppapi/cpp/objects/view.obj obj/ppapi/cpp/objects/vpn_provider.obj obj/ppapi/cpp/objects/websocket.obj obj/ppapi/cpp/objects/audio_input_dev.obj obj/ppapi/cpp/objects/audio_output_dev.obj obj/ppapi/cpp/objects/buffer_dev.obj obj/ppapi/cpp/objects/crypto_dev.obj obj/ppapi/cpp/objects/cursor_control_dev.obj obj/ppapi/cpp/objects/device_ref_dev.obj obj/ppapi/cpp/objects/file_chooser_dev.obj obj/ppapi/cpp/objects/ime_input_event_dev.obj obj/ppapi/cpp/objects/memory_dev.obj obj/ppapi/cpp/objects/printing_dev.obj obj/ppapi/cpp/objects/text_input_dev.obj obj/ppapi/cpp/objects/url_util_dev.obj obj/ppapi/cpp/objects/video_capture_client_dev.obj obj/ppapi/cpp/objects/video_capture_dev.obj obj/ppapi/cpp/objects/video_decoder_client_dev.obj obj/ppapi/cpp/objects/video_decoder_dev.obj obj/ppapi/cpp/objects/view_dev.obj obj/ppapi/cpp/objects/scriptable_object_deprecated.obj obj/ppapi/cpp/objects/camera_capabilities_private.obj obj/ppapi/cpp/objects/camera_device_private.obj obj/ppapi/cpp/objects/ext_crx_file_system_private.obj obj/ppapi/cpp/objects/file_io_private.obj obj/ppapi/cpp/objects/find_private.obj obj/ppapi/cpp/objects/flash_font_file.obj obj/ppapi/cpp/objects/host_resolver_private.obj obj/ppapi/cpp/objects/instance_private.obj obj/ppapi/cpp/objects/isolated_file_system_private.obj obj/ppapi/cpp/objects/net_address_private.obj obj/ppapi/cpp/objects/pass_file_handle.obj obj/ppapi/cpp/objects/pdf.obj obj/ppapi/cpp/objects/tcp_server_socket_private.obj obj/ppapi/cpp/objects/tcp_socket_private.obj obj/ppapi/cpp/objects/udp_socket_private.obj obj/ppapi/cpp/objects/uma_private.obj obj/ppapi/cpp/objects/var_private.obj obj/ppapi/cpp/objects/video_frame_private.obj obj/ppapi/cpp/objects/x509_certificate_private.obj obj/ppapi/cpp/objects/browser_font_trusted.obj obj/ppapi/cpp/objects/file_chooser_trusted.obj obj/ppapi/cpp/objects/paint_aggregator.obj obj/ppapi/cpp/objects/paint_manager.obj obj/ppapi/cpp/objects/lock.obj obj/ppapi/cpp/objects/simple_thread.obj obj/ppapi/cpp/objects/websocket_api.obj obj/ppapi/cpp/objects/precompile.cc.obj || obj/ppapi/c/c.stamp

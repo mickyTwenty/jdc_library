@@ -1,0 +1,15 @@
+defines = -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -D_HAS_NODISCARD -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DPROTOBUF_USE_DLLS
+include_dirs = -I../.. -Igen -I../../third_party/protobuf/src -Igen/protoc_out -Igen/components/policy/proto -I../../third_party/protobuf/src
+label_name = cloud_policy_proto_generated_compile
+target_out_dir = obj/components/policy
+target_output_name = cloud_policy_proto_generated_compile
+
+build obj/components/policy/cloud_policy_proto_generated_compile.inputdeps.stamp: stamp obj/components/policy/cloud_policy_proto_generated_compile_proto_gen.stamp obj/components/policy/proto/policy_common_definitions_compile_proto_gen.stamp
+
+build ./cloud_policy_proto_generated_compile.dll ./cloud_policy_proto_generated_compile.dll.lib ./cloud_policy_proto_generated_compile.dll.pdb: solink obj/components/policy/cloud_policy_proto_generated_compile_proto/cloud_policy.pb.obj ./protobuf_lite.dll.lib obj/components/policy/proto/policy_common_definitions_compile_proto.lib ./libc++.dll.lib || obj/components/policy/cloud_policy_proto_generated_compile_proto.stamp obj/build/config/shared_library_deps.stamp
+  ldflags = /CETCOMPAT --color-diagnostics /call-graph-profile-sort$:no /TIMESTAMP$:1609650000 /lldignoreenv /PDBSourcePath$:F$:/Projects/37_chromium/chromium/src/out/Default /WX /DEBUG$:GHASH /pdbaltpath$:%_PDB% /NATVIS$:../../build/config/c++/libc++.natvis /MACHINE$:X64 /FIXED$:NO /ignore$:4199 /ignore$:4221 /NXCOMPAT /DYNAMICBASE /INCREMENTAL /OPT$:NOREF /SUBSYSTEM$:CONSOLE,5.02 /LIBPATH:"C$:/Program$ Files$ (x86)/Windows$ Kits/10/lib/10.0.19041.0/um/x64" /LIBPATH:"C$:/Program$ Files$ (x86)/Microsoft$ Visual$ Studio/2019/Community/VC/Tools/MSVC/14.28.29333/lib/x64" /LIBPATH:"C$:/Program$ Files$ (x86)/Microsoft$ Visual$ Studio/2019/Community/VC/Tools/MSVC/14.28.29333/ATLMFC/lib/x64"
+  libs = advapi32.lib comdlg32.lib dbghelp.lib dnsapi.lib gdi32.lib msimg32.lib odbc32.lib odbccp32.lib oleaut32.lib shell32.lib shlwapi.lib user32.lib usp10.lib uuid.lib version.lib wininet.lib winmm.lib winspool.lib ws2_32.lib delayimp.lib kernel32.lib ole32.lib
+  frameworks =
+  swiftmodules =
+  output_extension = .dll
+  output_dir = .

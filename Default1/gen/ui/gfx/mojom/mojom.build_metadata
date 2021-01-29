@@ -1,0 +1,26 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/mojom/native_handle_types.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/accelerated_widget.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/buffer_types.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/ca_layer_params.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/color_space.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/display_color_spaces.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/font_render_params.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/gpu_extra_info.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/gpu_fence_handle.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/hdr_metadata.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/mask_filter_info.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/overlay_transform.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/presentation_feedback.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/rrect_f.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/selection_bound.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/swap_result.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/swap_timings.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/gfx/mojom/transform.mojom"
+  ]
+}

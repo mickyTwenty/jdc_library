@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display_configuration_params.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display_constants.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display_layout.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display_mode.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/display_snapshot.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/display/mojom/gamma_ramp_rgb_entry.mojom"
+  ]
+}

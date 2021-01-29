@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/network/public/mojom/schemeful_site.mojom"
+  ]
+}

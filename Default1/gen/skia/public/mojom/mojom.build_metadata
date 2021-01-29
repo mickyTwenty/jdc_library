@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/skia/public/mojom/bitmap.mojom",
+    "F:/Projects/37_chromium/chromium/src/skia/public/mojom/image_info.mojom",
+    "F:/Projects/37_chromium/chromium/src/skia/public/mojom/skcolor.mojom",
+    "F:/Projects/37_chromium/chromium/src/skia/public/mojom/tile_mode.mojom"
+  ]
+}

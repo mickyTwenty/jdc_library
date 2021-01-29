@@ -1,0 +1,18 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/js/ts/bindings/tests/other_test_interfaces1.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/js/ts/bindings/tests/other_test_interfaces3.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/constants.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/enums.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/export1.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/export2.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/export3.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/export4.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/import.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/module.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/other_dir/other_dir.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/ts/bindings/tests/structs.test-mojom"
+  ]
+}

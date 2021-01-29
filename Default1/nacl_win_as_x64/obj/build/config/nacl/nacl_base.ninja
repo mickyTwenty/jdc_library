@@ -1,0 +1,5 @@
+target_out_dir = nacl_win_as_x64/obj/build/config/nacl
+target_output_name = nacl_base
+
+
+build nacl_win_as_x64/obj/build/config/nacl/nacl_base.stamp: nacl_win_as_x64_stamp

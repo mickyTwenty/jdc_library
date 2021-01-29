@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/preferences/public/mojom/preferences.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/preferences/public/mojom/tracked_preference_validation_delegate.mojom"
+  ]
+}

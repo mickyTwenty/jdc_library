@@ -1,0 +1,36 @@
+defines = -DSCTP_PROCESS_LEVEL_LOCKS -DSCTP_SIMPLE_ALLOCATOR -DSCTP_USE_OPENSSL_SHA1 -DSCTP_USE_OPENSSL_RAND -D__Userspace__ -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DBORINGSSL_SHARED_LIBRARY
+include_dirs = -I../.. -Igen -I../../third_party/usrsctp/usrsctplib/usrsctplib -I../../third_party/usrsctp/usrsctplib/usrsctplib/netinet -I../../third_party/boringssl/src/include
+cflags = -UINET -UINET6 -fno-delete-null-pointer-checks -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -fcomplete-member-pointers /Gy /FS /bigobj /utf-8 /Zc$:twoPhase /Zc$:sizedDealloc- /X /D__WRL_ENABLE_FUNCTION_STATICS__ -fmsc-version=1916 /Zc$:dllexportInlines- -m64 -msse3 /Brepro -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -Xclang -fdebug-compilation-dir -Xclang . -no-canonical-prefixes /Od /Ob0 /GF /Z7 -gcodeview-ghash -Xclang -debug-info-kind=constructor -ftrivial-auto-var-init=pattern /guard$:cf,nochecks /MDd -Xclang -add-plugin -Xclang find-bad-constructs -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare /W3 /wd4800 /wd4267 /wd4996 -Wno-unused-variable -Wno-misleading-indentation /WX /wd4091 /wd4127 /wd4251 /wd4275 /wd4312 /wd4324 /wd4351 /wd4355 /wd4503 /wd4589 /wd4611 /wd4100 /wd4121 /wd4244 /wd4505 /wd4510 /wd4512 /wd4610 /wd4838 /wd4995 /wd4996 /wd4456 /wd4457 /wd4458 /wd4459 /wd4200 /wd4201 /wd4204 /wd4221 /wd4245 /wd4267 /wd4305 /wd4389 /wd4702 /wd4701 /wd4703 /wd4661 /wd4706 /wd4715 -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-nonportable-include-path -Wno-psabi -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-non-c-typedef-for-linkage -Wmax-tokens -Wno-incompatible-pointer-types -Wno-unused-function -Wno-deprecated-declarations -Wno-unguarded-availability
+cflags_c = /TC -Wno-implicit-fallthrough
+label_name = usrsctp
+target_out_dir = obj/third_party/usrsctp
+target_output_name = usrsctp
+
+build obj/third_party/usrsctp/usrsctp/sctp_asconf.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_asconf.c
+build obj/third_party/usrsctp/usrsctp/sctp_auth.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_auth.c
+build obj/third_party/usrsctp/usrsctp/sctp_bsd_addr.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_bsd_addr.c
+build obj/third_party/usrsctp/usrsctp/sctp_callout.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_callout.c
+build obj/third_party/usrsctp/usrsctp/sctp_cc_functions.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_cc_functions.c
+build obj/third_party/usrsctp/usrsctp/sctp_crc32.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_crc32.c
+build obj/third_party/usrsctp/usrsctp/sctp_indata.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_indata.c
+build obj/third_party/usrsctp/usrsctp/sctp_input.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_input.c
+build obj/third_party/usrsctp/usrsctp/sctp_output.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_output.c
+build obj/third_party/usrsctp/usrsctp/sctp_pcb.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_pcb.c
+build obj/third_party/usrsctp/usrsctp/sctp_peeloff.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_peeloff.c
+build obj/third_party/usrsctp/usrsctp/sctp_sha1.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_sha1.c
+build obj/third_party/usrsctp/usrsctp/sctp_ss_functions.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_ss_functions.c
+build obj/third_party/usrsctp/usrsctp/sctp_sysctl.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_sysctl.c
+build obj/third_party/usrsctp/usrsctp/sctp_timer.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_timer.c
+build obj/third_party/usrsctp/usrsctp/sctp_userspace.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_userspace.c
+build obj/third_party/usrsctp/usrsctp/sctp_usrreq.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctp_usrreq.c
+build obj/third_party/usrsctp/usrsctp/sctputil.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet/sctputil.c
+build obj/third_party/usrsctp/usrsctp/sctp6_usrreq.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/netinet6/sctp6_usrreq.c
+build obj/third_party/usrsctp/usrsctp/user_environment.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/user_environment.c
+build obj/third_party/usrsctp/usrsctp/user_mbuf.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/user_mbuf.c
+build obj/third_party/usrsctp/usrsctp/user_recv_thread.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/user_recv_thread.c
+build obj/third_party/usrsctp/usrsctp/user_socket.obj: cc ../../third_party/usrsctp/usrsctplib/usrsctplib/user_socket.c
+
+build obj/third_party/usrsctp/usrsctp.lib: alink obj/third_party/usrsctp/usrsctp/sctp_asconf.obj obj/third_party/usrsctp/usrsctp/sctp_auth.obj obj/third_party/usrsctp/usrsctp/sctp_bsd_addr.obj obj/third_party/usrsctp/usrsctp/sctp_callout.obj obj/third_party/usrsctp/usrsctp/sctp_cc_functions.obj obj/third_party/usrsctp/usrsctp/sctp_crc32.obj obj/third_party/usrsctp/usrsctp/sctp_indata.obj obj/third_party/usrsctp/usrsctp/sctp_input.obj obj/third_party/usrsctp/usrsctp/sctp_output.obj obj/third_party/usrsctp/usrsctp/sctp_pcb.obj obj/third_party/usrsctp/usrsctp/sctp_peeloff.obj obj/third_party/usrsctp/usrsctp/sctp_sha1.obj obj/third_party/usrsctp/usrsctp/sctp_ss_functions.obj obj/third_party/usrsctp/usrsctp/sctp_sysctl.obj obj/third_party/usrsctp/usrsctp/sctp_timer.obj obj/third_party/usrsctp/usrsctp/sctp_userspace.obj obj/third_party/usrsctp/usrsctp/sctp_usrreq.obj obj/third_party/usrsctp/usrsctp/sctputil.obj obj/third_party/usrsctp/usrsctp/sctp6_usrreq.obj obj/third_party/usrsctp/usrsctp/user_environment.obj obj/third_party/usrsctp/usrsctp/user_mbuf.obj obj/third_party/usrsctp/usrsctp/user_recv_thread.obj obj/third_party/usrsctp/usrsctp/user_socket.obj || ./boringssl.dll.lib
+  arflags = /ignore$:4221 /llvmlibthin
+  output_extension = .lib
+  output_dir = obj/third_party/usrsctp

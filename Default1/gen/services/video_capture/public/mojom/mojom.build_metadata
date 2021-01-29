@@ -1,0 +1,21 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/capture/mojom/image_capture.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/capture/mojom/video_capture.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/mojo/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/device.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/device_factory.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/devices_changed_observer.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/producer.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/scoped_access_permission.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/testing_controls.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/video_capture_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/video_frame_handler.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/video_source.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/video_source_provider.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/video_capture/public/mojom/virtual_device.mojom"
+  ]
+}

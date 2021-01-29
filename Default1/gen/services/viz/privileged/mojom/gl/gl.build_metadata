@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/gpu/ipc/common/interfaces.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/mojo/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gl/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/viz/privileged/mojom/gl/context_lost_reason.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/viz/privileged/mojom/gl/gpu_host.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/viz/privileged/mojom/gl/gpu_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/viz/privileged/mojom/gl/info_collection_gpu_service.mojom"
+  ]
+}

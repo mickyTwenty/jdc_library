@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/interface_control_messages.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/native_struct.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/pipe_control_messages.mojom"
+  ]
+}

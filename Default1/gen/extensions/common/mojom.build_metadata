@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/content/public/common/interfaces.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/extensions/common/api/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/app_window.mojom",
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/channel.mojom",
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/feature_session_type.mojom",
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/guest_view.mojom",
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/keep_alive.mojom",
+    "F:/Projects/37_chromium/chromium/src/extensions/common/mojom/renderer.mojom"
+  ]
+}

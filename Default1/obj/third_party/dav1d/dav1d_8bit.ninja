@@ -1,0 +1,33 @@
+defines = -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DCONFIG_LOG=1 -DDAV1D_API=
+include_dirs = -I../.. -Igen -I../../third_party/dav1d/libdav1d -I../../third_party/dav1d/libdav1d/include -I../../third_party/dav1d/libdav1d/include/dav1d -I../../third_party/dav1d/config/win/x64 -I../../third_party/dav1d/version
+cflags = -D_FILE_OFFSET_BITS=64 -D_POSIX_C_SOURCE=200112L -DBITDEPTH=8 -fno-delete-null-pointer-checks -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -fcomplete-member-pointers /Gy /FS /bigobj /utf-8 /Zc$:twoPhase /Zc$:sizedDealloc- /X /D__WRL_ENABLE_FUNCTION_STATICS__ -fmsc-version=1916 /Zc$:dllexportInlines- -m64 -msse3 /Brepro -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -Xclang -fdebug-compilation-dir -Xclang . -no-canonical-prefixes /Od /Ob0 /GF /Z7 -gcodeview-ghash -Xclang -debug-info-kind=constructor -ftrivial-auto-var-init=pattern /guard$:cf,nochecks /MDd -Xclang -add-plugin -Xclang find-bad-constructs -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare /W3 /wd4800 /wd4267 /wd4996 -Wno-unused-variable -Wno-misleading-indentation /WX /wd4091 /wd4127 /wd4251 /wd4275 /wd4312 /wd4324 /wd4351 /wd4355 /wd4503 /wd4589 /wd4611 /wd4100 /wd4121 /wd4244 /wd4505 /wd4510 /wd4512 /wd4610 /wd4838 /wd4995 /wd4996 /wd4456 /wd4457 /wd4458 /wd4459 /wd4200 /wd4201 /wd4204 /wd4221 /wd4245 /wd4267 /wd4305 /wd4389 /wd4702 /wd4701 /wd4703 /wd4661 /wd4706 /wd4715 -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-nonportable-include-path -Wno-psabi -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-non-c-typedef-for-linkage -Wmax-tokens
+cflags_c = /TC -Wno-implicit-fallthrough
+label_name = dav1d_8bit
+target_out_dir = obj/third_party/dav1d
+target_output_name = dav1d_8bit
+
+build obj/third_party/dav1d/dav1d_8bit/cdef_apply_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/cdef_apply_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/cdef_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/cdef_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/fg_apply_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/fg_apply_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/film_grain_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/film_grain_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/ipred_prepare_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/ipred_prepare_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/ipred_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/ipred_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/itx_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/itx_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/lf_apply_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/lf_apply_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/loopfilter_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/loopfilter_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/looprestoration_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/looprestoration_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/lr_apply_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/lr_apply_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/mc_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/mc_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/recon_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/recon_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/cdef_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/cdef_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/film_grain_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/film_grain_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/ipred_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/ipred_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/itx_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/itx_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/loopfilter_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/loopfilter_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/looprestoration_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/looprestoration_init_tmpl.c
+build obj/third_party/dav1d/dav1d_8bit/mc_init_tmpl.obj: cc ../../third_party/dav1d/libdav1d/src/x86/mc_init_tmpl.c
+
+build obj/third_party/dav1d/dav1d_8bit.lib: alink obj/third_party/dav1d/dav1d_8bit/cdef_apply_tmpl.obj obj/third_party/dav1d/dav1d_8bit/cdef_tmpl.obj obj/third_party/dav1d/dav1d_8bit/fg_apply_tmpl.obj obj/third_party/dav1d/dav1d_8bit/film_grain_tmpl.obj obj/third_party/dav1d/dav1d_8bit/ipred_prepare_tmpl.obj obj/third_party/dav1d/dav1d_8bit/ipred_tmpl.obj obj/third_party/dav1d/dav1d_8bit/itx_tmpl.obj obj/third_party/dav1d/dav1d_8bit/lf_apply_tmpl.obj obj/third_party/dav1d/dav1d_8bit/loopfilter_tmpl.obj obj/third_party/dav1d/dav1d_8bit/looprestoration_tmpl.obj obj/third_party/dav1d/dav1d_8bit/lr_apply_tmpl.obj obj/third_party/dav1d/dav1d_8bit/mc_tmpl.obj obj/third_party/dav1d/dav1d_8bit/recon_tmpl.obj obj/third_party/dav1d/dav1d_8bit/cdef_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/film_grain_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/ipred_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/itx_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/loopfilter_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/looprestoration_init_tmpl.obj obj/third_party/dav1d/dav1d_8bit/mc_init_tmpl.obj
+  arflags = /ignore$:4221 /llvmlibthin
+  output_extension = .lib
+  output_dir = obj/third_party/dav1d

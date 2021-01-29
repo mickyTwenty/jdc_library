@@ -1,0 +1,93 @@
+defines = -DHAVE_ZLIB -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER
+include_dirs = -I../.. -Igen -I../../third_party/protobuf/src -I../../third_party/zlib
+cflags = /wd4018 /wd4065 /wd4146 /wd4244 /wd4267 /wd4291 /wd4305 /wd4355 /wd4506 /wd4715 -fno-delete-null-pointer-checks -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -fcomplete-member-pointers /Gy /FS /bigobj /utf-8 /Zc$:twoPhase /Zc$:sizedDealloc- /X /D__WRL_ENABLE_FUNCTION_STATICS__ -fmsc-version=1916 /Zc$:dllexportInlines- -m64 -msse3 /Brepro -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -Xclang -fdebug-compilation-dir -Xclang . -no-canonical-prefixes /Od /Ob0 /GF /Z7 -gcodeview-ghash -Xclang -debug-info-kind=constructor -ftrivial-auto-var-init=pattern /guard$:cf,nochecks /MDd -Xclang -add-plugin -Xclang find-bad-constructs -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare /W3 /wd4800 /wd4267 /wd4996 -Wno-unused-variable -Wno-misleading-indentation /WX /wd4091 /wd4127 /wd4251 /wd4275 /wd4312 /wd4324 /wd4351 /wd4355 /wd4503 /wd4589 /wd4611 /wd4100 /wd4121 /wd4244 /wd4505 /wd4510 /wd4512 /wd4610 /wd4838 /wd4995 /wd4996 /wd4456 /wd4457 /wd4458 /wd4459 /wd4200 /wd4201 /wd4204 /wd4221 /wd4245 /wd4267 /wd4305 /wd4389 /wd4702 /wd4701 /wd4703 /wd4661 /wd4706 /wd4715 -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-nonportable-include-path -Wno-psabi -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-non-c-typedef-for-linkage -Wmax-tokens -Wno-unused-function -Wno-shorten-64-to-32
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-trigraphs /TP /GR- -I../../buildtools/third_party/libc++/trunk/include /wd4577
+label_name = protobuf_full
+target_out_dir = obj/third_party/protobuf
+target_output_name = protobuf_full
+
+build obj/third_party/protobuf/protobuf_full/any_lite.obj: cxx ../../third_party/protobuf/src/google/protobuf/any_lite.cc
+build obj/third_party/protobuf/protobuf_full/arena.obj: cxx ../../third_party/protobuf/src/google/protobuf/arena.cc
+build obj/third_party/protobuf/protobuf_full/arenastring.obj: cxx ../../third_party/protobuf/src/google/protobuf/arenastring.cc
+build obj/third_party/protobuf/protobuf_full/extension_set.obj: cxx ../../third_party/protobuf/src/google/protobuf/extension_set.cc
+build obj/third_party/protobuf/protobuf_full/generated_enum_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/generated_enum_util.cc
+build obj/third_party/protobuf/protobuf_full/generated_message_table_driven_lite.obj: cxx ../../third_party/protobuf/src/google/protobuf/generated_message_table_driven_lite.cc
+build obj/third_party/protobuf/protobuf_full/generated_message_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/generated_message_util.cc
+build obj/third_party/protobuf/protobuf_full/implicit_weak_message.obj: cxx ../../third_party/protobuf/src/google/protobuf/implicit_weak_message.cc
+build obj/third_party/protobuf/protobuf_full/coded_stream.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/coded_stream.cc
+build obj/third_party/protobuf/protobuf_full/io_win32.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/io_win32.cc
+build obj/third_party/protobuf/protobuf_full/strtod.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/strtod.cc
+build obj/third_party/protobuf/protobuf_full/zero_copy_stream.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream.cc
+build obj/third_party/protobuf/protobuf_full/zero_copy_stream_impl.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream_impl.cc
+build obj/third_party/protobuf/protobuf_full/zero_copy_stream_impl_lite.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
+build obj/third_party/protobuf/protobuf_full/map.obj: cxx ../../third_party/protobuf/src/google/protobuf/map.cc
+build obj/third_party/protobuf/protobuf_full/message_lite.obj: cxx ../../third_party/protobuf/src/google/protobuf/message_lite.cc
+build obj/third_party/protobuf/protobuf_full/parse_context.obj: cxx ../../third_party/protobuf/src/google/protobuf/parse_context.cc
+build obj/third_party/protobuf/protobuf_full/repeated_field.obj: cxx ../../third_party/protobuf/src/google/protobuf/repeated_field.cc
+build obj/third_party/protobuf/protobuf_full/bytestream.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/bytestream.cc
+build obj/third_party/protobuf/protobuf_full/common.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/common.cc
+build obj/third_party/protobuf/protobuf_full/int128.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/int128.cc
+build obj/third_party/protobuf/protobuf_full/status.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/status.cc
+build obj/third_party/protobuf/protobuf_full/statusor.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/statusor.cc
+build obj/third_party/protobuf/protobuf_full/stringpiece.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/stringpiece.cc
+build obj/third_party/protobuf/protobuf_full/stringprintf.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/stringprintf.cc
+build obj/third_party/protobuf/protobuf_full/structurally_valid.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/structurally_valid.cc
+build obj/third_party/protobuf/protobuf_full/strutil.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/strutil.cc
+build obj/third_party/protobuf/protobuf_full/time.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/time.cc
+build obj/third_party/protobuf/protobuf_full/wire_format_lite.obj: cxx ../../third_party/protobuf/src/google/protobuf/wire_format_lite.cc
+build obj/third_party/protobuf/protobuf_full/any.obj: cxx ../../third_party/protobuf/src/google/protobuf/any.cc
+build obj/third_party/protobuf/protobuf_full/any.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/any.pb.cc
+build obj/third_party/protobuf/protobuf_full/api.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/api.pb.cc
+build obj/third_party/protobuf/protobuf_full/importer.obj: cxx ../../third_party/protobuf/src/google/protobuf/compiler/importer.cc
+build obj/third_party/protobuf/protobuf_full/parser.obj: cxx ../../third_party/protobuf/src/google/protobuf/compiler/parser.cc
+build obj/third_party/protobuf/protobuf_full/descriptor.obj: cxx ../../third_party/protobuf/src/google/protobuf/descriptor.cc
+build obj/third_party/protobuf/protobuf_full/descriptor.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/descriptor.pb.cc
+build obj/third_party/protobuf/protobuf_full/descriptor_database.obj: cxx ../../third_party/protobuf/src/google/protobuf/descriptor_database.cc
+build obj/third_party/protobuf/protobuf_full/duration.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/duration.pb.cc
+build obj/third_party/protobuf/protobuf_full/dynamic_message.obj: cxx ../../third_party/protobuf/src/google/protobuf/dynamic_message.cc
+build obj/third_party/protobuf/protobuf_full/empty.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/empty.pb.cc
+build obj/third_party/protobuf/protobuf_full/extension_set_heavy.obj: cxx ../../third_party/protobuf/src/google/protobuf/extension_set_heavy.cc
+build obj/third_party/protobuf/protobuf_full/field_mask.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/field_mask.pb.cc
+build obj/third_party/protobuf/protobuf_full/generated_message_reflection.obj: cxx ../../third_party/protobuf/src/google/protobuf/generated_message_reflection.cc
+build obj/third_party/protobuf/protobuf_full/gzip_stream.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/gzip_stream.cc
+build obj/third_party/protobuf/protobuf_full/printer.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/printer.cc
+build obj/third_party/protobuf/protobuf_full/tokenizer.obj: cxx ../../third_party/protobuf/src/google/protobuf/io/tokenizer.cc
+build obj/third_party/protobuf/protobuf_full/map_field.obj: cxx ../../third_party/protobuf/src/google/protobuf/map_field.cc
+build obj/third_party/protobuf/protobuf_full/message.obj: cxx ../../third_party/protobuf/src/google/protobuf/message.cc
+build obj/third_party/protobuf/protobuf_full/reflection_ops.obj: cxx ../../third_party/protobuf/src/google/protobuf/reflection_ops.cc
+build obj/third_party/protobuf/protobuf_full/service.obj: cxx ../../third_party/protobuf/src/google/protobuf/service.cc
+build obj/third_party/protobuf/protobuf_full/source_context.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/source_context.pb.cc
+build obj/third_party/protobuf/protobuf_full/struct.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/struct.pb.cc
+build obj/third_party/protobuf/protobuf_full/substitute.obj: cxx ../../third_party/protobuf/src/google/protobuf/stubs/substitute.cc
+build obj/third_party/protobuf/protobuf_full/text_format.obj: cxx ../../third_party/protobuf/src/google/protobuf/text_format.cc
+build obj/third_party/protobuf/protobuf_full/timestamp.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/timestamp.pb.cc
+build obj/third_party/protobuf/protobuf_full/type.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/type.pb.cc
+build obj/third_party/protobuf/protobuf_full/unknown_field_set.obj: cxx ../../third_party/protobuf/src/google/protobuf/unknown_field_set.cc
+build obj/third_party/protobuf/protobuf_full/delimited_message_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/delimited_message_util.cc
+build obj/third_party/protobuf/protobuf_full/field_comparator.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/field_comparator.cc
+build obj/third_party/protobuf/protobuf_full/field_mask_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/field_mask_util.cc
+build obj/third_party/protobuf/protobuf_full/datapiece.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/datapiece.cc
+build obj/third_party/protobuf/protobuf_full/default_value_objectwriter.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/default_value_objectwriter.cc
+build obj/third_party/protobuf/protobuf_full/error_listener.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/error_listener.cc
+build obj/third_party/protobuf/protobuf_full/field_mask_utility.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/field_mask_utility.cc
+build obj/third_party/protobuf/protobuf_full/json_escaping.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/json_escaping.cc
+build obj/third_party/protobuf/protobuf_full/json_objectwriter.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/json_objectwriter.cc
+build obj/third_party/protobuf/protobuf_full/json_stream_parser.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/json_stream_parser.cc
+build obj/third_party/protobuf/protobuf_full/object_writer.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/object_writer.cc
+build obj/third_party/protobuf/protobuf_full/proto_writer.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/proto_writer.cc
+build obj/third_party/protobuf/protobuf_full/protostream_objectsource.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/protostream_objectsource.cc
+build obj/third_party/protobuf/protobuf_full/protostream_objectwriter.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/protostream_objectwriter.cc
+build obj/third_party/protobuf/protobuf_full/type_info.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/type_info.cc
+build obj/third_party/protobuf/protobuf_full/type_info_test_helper.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/type_info_test_helper.cc
+build obj/third_party/protobuf/protobuf_full/utility.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/internal/utility.cc
+build obj/third_party/protobuf/protobuf_full/json_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/json_util.cc
+build obj/third_party/protobuf/protobuf_full/message_differencer.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/message_differencer.cc
+build obj/third_party/protobuf/protobuf_full/time_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/time_util.cc
+build obj/third_party/protobuf/protobuf_full/type_resolver_util.obj: cxx ../../third_party/protobuf/src/google/protobuf/util/type_resolver_util.cc
+build obj/third_party/protobuf/protobuf_full/wire_format.obj: cxx ../../third_party/protobuf/src/google/protobuf/wire_format.cc
+build obj/third_party/protobuf/protobuf_full/wrappers.pb.obj: cxx ../../third_party/protobuf/src/google/protobuf/wrappers.pb.cc
+
+build obj/third_party/protobuf/protobuf_full.lib: alink obj/third_party/protobuf/protobuf_full/any_lite.obj obj/third_party/protobuf/protobuf_full/arena.obj obj/third_party/protobuf/protobuf_full/arenastring.obj obj/third_party/protobuf/protobuf_full/extension_set.obj obj/third_party/protobuf/protobuf_full/generated_enum_util.obj obj/third_party/protobuf/protobuf_full/generated_message_table_driven_lite.obj obj/third_party/protobuf/protobuf_full/generated_message_util.obj obj/third_party/protobuf/protobuf_full/implicit_weak_message.obj obj/third_party/protobuf/protobuf_full/coded_stream.obj obj/third_party/protobuf/protobuf_full/io_win32.obj obj/third_party/protobuf/protobuf_full/strtod.obj obj/third_party/protobuf/protobuf_full/zero_copy_stream.obj obj/third_party/protobuf/protobuf_full/zero_copy_stream_impl.obj obj/third_party/protobuf/protobuf_full/zero_copy_stream_impl_lite.obj obj/third_party/protobuf/protobuf_full/map.obj obj/third_party/protobuf/protobuf_full/message_lite.obj obj/third_party/protobuf/protobuf_full/parse_context.obj obj/third_party/protobuf/protobuf_full/repeated_field.obj obj/third_party/protobuf/protobuf_full/bytestream.obj obj/third_party/protobuf/protobuf_full/common.obj obj/third_party/protobuf/protobuf_full/int128.obj obj/third_party/protobuf/protobuf_full/status.obj obj/third_party/protobuf/protobuf_full/statusor.obj obj/third_party/protobuf/protobuf_full/stringpiece.obj obj/third_party/protobuf/protobuf_full/stringprintf.obj obj/third_party/protobuf/protobuf_full/structurally_valid.obj obj/third_party/protobuf/protobuf_full/strutil.obj obj/third_party/protobuf/protobuf_full/time.obj obj/third_party/protobuf/protobuf_full/wire_format_lite.obj obj/third_party/protobuf/protobuf_full/any.obj obj/third_party/protobuf/protobuf_full/any.pb.obj obj/third_party/protobuf/protobuf_full/api.pb.obj obj/third_party/protobuf/protobuf_full/importer.obj obj/third_party/protobuf/protobuf_full/parser.obj obj/third_party/protobuf/protobuf_full/descriptor.obj obj/third_party/protobuf/protobuf_full/descriptor.pb.obj obj/third_party/protobuf/protobuf_full/descriptor_database.obj obj/third_party/protobuf/protobuf_full/duration.pb.obj obj/third_party/protobuf/protobuf_full/dynamic_message.obj obj/third_party/protobuf/protobuf_full/empty.pb.obj obj/third_party/protobuf/protobuf_full/extension_set_heavy.obj obj/third_party/protobuf/protobuf_full/field_mask.pb.obj obj/third_party/protobuf/protobuf_full/generated_message_reflection.obj obj/third_party/protobuf/protobuf_full/gzip_stream.obj obj/third_party/protobuf/protobuf_full/printer.obj obj/third_party/protobuf/protobuf_full/tokenizer.obj obj/third_party/protobuf/protobuf_full/map_field.obj obj/third_party/protobuf/protobuf_full/message.obj obj/third_party/protobuf/protobuf_full/reflection_ops.obj obj/third_party/protobuf/protobuf_full/service.obj obj/third_party/protobuf/protobuf_full/source_context.pb.obj obj/third_party/protobuf/protobuf_full/struct.pb.obj obj/third_party/protobuf/protobuf_full/substitute.obj obj/third_party/protobuf/protobuf_full/text_format.obj obj/third_party/protobuf/protobuf_full/timestamp.pb.obj obj/third_party/protobuf/protobuf_full/type.pb.obj obj/third_party/protobuf/protobuf_full/unknown_field_set.obj obj/third_party/protobuf/protobuf_full/delimited_message_util.obj obj/third_party/protobuf/protobuf_full/field_comparator.obj obj/third_party/protobuf/protobuf_full/field_mask_util.obj obj/third_party/protobuf/protobuf_full/datapiece.obj obj/third_party/protobuf/protobuf_full/default_value_objectwriter.obj obj/third_party/protobuf/protobuf_full/error_listener.obj obj/third_party/protobuf/protobuf_full/field_mask_utility.obj obj/third_party/protobuf/protobuf_full/json_escaping.obj obj/third_party/protobuf/protobuf_full/json_objectwriter.obj obj/third_party/protobuf/protobuf_full/json_stream_parser.obj obj/third_party/protobuf/protobuf_full/object_writer.obj obj/third_party/protobuf/protobuf_full/proto_writer.obj obj/third_party/protobuf/protobuf_full/protostream_objectsource.obj obj/third_party/protobuf/protobuf_full/protostream_objectwriter.obj obj/third_party/protobuf/protobuf_full/type_info.obj obj/third_party/protobuf/protobuf_full/type_info_test_helper.obj obj/third_party/protobuf/protobuf_full/utility.obj obj/third_party/protobuf/protobuf_full/json_util.obj obj/third_party/protobuf/protobuf_full/message_differencer.obj obj/third_party/protobuf/protobuf_full/time_util.obj obj/third_party/protobuf/protobuf_full/type_resolver_util.obj obj/third_party/protobuf/protobuf_full/wire_format.obj obj/third_party/protobuf/protobuf_full/wrappers.pb.obj || ./zlib.dll.lib
+  arflags = /ignore$:4221 /llvmlibthin
+  output_extension = .lib
+  output_dir = obj/third_party/protobuf

@@ -1,0 +1,10 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/services/filesystem/public/mojom/directory.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/services/filesystem/public/mojom/file.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/services/filesystem/public/mojom/types.mojom"
+  ]
+}

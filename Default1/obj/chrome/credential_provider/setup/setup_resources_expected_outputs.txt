@@ -1,0 +1,2 @@
+gen/chrome/credential_provider/setup/grit/gcp_setup_resources.h
+gen/chrome/credential_provider/setup/grit/gcp_setup_resources.rc

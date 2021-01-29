@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/components/content_settings/core/common/mojo_bindings.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_origin.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/content_settings/common/content_settings_agent.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/content_settings/common/content_settings_manager.mojom"
+  ]
+}

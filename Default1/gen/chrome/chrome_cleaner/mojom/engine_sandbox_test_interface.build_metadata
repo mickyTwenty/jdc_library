@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/chrome/chrome_cleaner/mojom/engine_sandbox_interface.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/test_pup_typemap.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/test_wstring_embedded_nulls.mojom"
+  ]
+}

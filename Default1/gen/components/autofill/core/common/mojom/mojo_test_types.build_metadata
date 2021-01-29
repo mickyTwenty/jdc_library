@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/components/autofill/core/common/mojom/mojo_types.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/autofill/core/common/mojom/test_autofill_types.mojom"
+  ]
+}

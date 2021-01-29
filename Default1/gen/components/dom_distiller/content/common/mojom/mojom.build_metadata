@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/components/dom_distiller/core/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/dom_distiller/content/common/mojom/distillability_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/dom_distiller/content/common/mojom/distiller_javascript_service.mojom"
+  ]
+}

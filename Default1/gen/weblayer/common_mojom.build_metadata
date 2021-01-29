@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/components/content_settings/core/common/mojo_bindings.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/weblayer/common/error_page_helper.mojom",
+    "F:/Projects/37_chromium/chromium/src/weblayer/common/renderer_configuration.mojom"
+  ]
+}

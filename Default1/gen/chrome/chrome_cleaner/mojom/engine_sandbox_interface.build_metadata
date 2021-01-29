@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/chrome/chrome_cleaner/mojom/footprints_interface.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/chrome/chrome_cleaner/mojom/wstring.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/cleaner_engine_requests.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/engine_file_requests.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/engine_requests.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/engine_sandbox.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/pup.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/windows_handle.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/chrome_cleaner/mojom/wstring_embedded_nulls.mojom"
+  ]
+}

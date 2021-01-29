@@ -1,0 +1,11 @@
+defines = -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -D_HAS_NODISCARD -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+include_dirs = -I../.. -Igen
+label_name = boringssl_asm
+target_out_dir = obj/third_party/boringssl
+target_output_name = boringssl_asm
+
+
+build obj/third_party/boringssl/boringssl_asm.lib: alink obj/third_party/boringssl/boringssl_asm/chacha-x86_64.o obj/third_party/boringssl/boringssl_asm/aes128gcmsiv-x86_64.o obj/third_party/boringssl/boringssl_asm/chacha20_poly1305_x86_64.o obj/third_party/boringssl/boringssl_asm/aesni-gcm-x86_64.o obj/third_party/boringssl/boringssl_asm/aesni-x86_64.o obj/third_party/boringssl/boringssl_asm/ghash-ssse3-x86_64.o obj/third_party/boringssl/boringssl_asm/ghash-x86_64.o obj/third_party/boringssl/boringssl_asm/md5-x86_64.o obj/third_party/boringssl/boringssl_asm/p256-x86_64-asm.o obj/third_party/boringssl/boringssl_asm/p256_beeu-x86_64-asm.o obj/third_party/boringssl/boringssl_asm/rdrand-x86_64.o obj/third_party/boringssl/boringssl_asm/rsaz-avx2.o obj/third_party/boringssl/boringssl_asm/sha1-x86_64.o obj/third_party/boringssl/boringssl_asm/sha256-x86_64.o obj/third_party/boringssl/boringssl_asm/sha512-x86_64.o obj/third_party/boringssl/boringssl_asm/vpaes-x86_64.o obj/third_party/boringssl/boringssl_asm/x86_64-mont.o obj/third_party/boringssl/boringssl_asm/x86_64-mont5.o obj/third_party/boringssl/boringssl_asm/trampoline-x86_64.o || obj/third_party/boringssl/boringssl_asm_action.stamp
+  arflags = /ignore$:4221 /llvmlibthin
+  output_extension = .lib
+  output_dir = obj/third_party/boringssl

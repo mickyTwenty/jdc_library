@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/chrome/services/removable_storage_writer/public/mojom/removable_storage_writer.mojom"
+  ]
+}

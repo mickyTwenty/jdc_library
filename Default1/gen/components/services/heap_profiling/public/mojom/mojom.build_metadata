@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/services/heap_profiling/public/mojom/heap_profiling_client.mojom",
+    "F:/Projects/37_chromium/chromium/src/components/services/heap_profiling/public/mojom/heap_profiling_service.mojom"
+  ]
+}

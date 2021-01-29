@@ -1,0 +1,31 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/application_state.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/big_buffer.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/big_string.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/binder.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/file.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/file_error.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/file_info.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/file_path.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/generic_pending_receiver.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/memory_allocator_dump_cross_process_uid.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/memory_pressure_level.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/message_pump_type.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/process_id.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/read_only_buffer.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/read_only_file.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/ref_counted_memory.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/shared_memory.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/string16.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/text_direction.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/thread_priority.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/time.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/token.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/unguessable_token.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/mojom/base/values.mojom"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/mojo/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/audio_device_description.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/audio_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/debug_recording.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/device_notifications.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/log_factory_manager.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/stream_factory.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/system_info.mojom",
+    "F:/Projects/37_chromium/chromium/src/services/audio/public/mojom/testing_api.mojom"
+  ]
+}

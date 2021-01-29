@@ -1,0 +1,94 @@
+[
+  {
+    "traits_headers": [
+      "skia/public/mojom/tile_mode_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkTileMode",
+        "mojom": "skia.mojom.TileMode"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/bitmap_skbitmap_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_typemap_traits",
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapN32",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapWithArbitraryBpp",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapWithArbitraryBpp",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.BitmapMappedFromTrustedProcess",
+        "nullable_is_same_type": true
+      },
+      {
+        "cpp": "::SkBitmap",
+        "mojom": "skia.mojom.InlineBitmap",
+        "nullable_is_same_type": true
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/skcolor_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      "//skia"
+    ],
+    "types": [
+      {
+        "copyable_pass_by_value": true,
+        "cpp": "::SkColor",
+        "mojom": "skia.mojom.SkColor"
+      }
+    ]
+  },
+  {
+    "traits_headers": [
+      "skia/public/mojom/image_info_mojom_traits.h"
+    ],
+    "traits_public_deps": [
+      ":shared_typemap_traits",
+      "//skia"
+    ],
+    "types": [
+      {
+        "cpp": "::SkAlphaType",
+        "mojom": "skia.mojom.AlphaType"
+      },
+      {
+        "cpp": "::SkColorType",
+        "mojom": "skia.mojom.ColorType"
+      },
+      {
+        "cpp": "::SkImageInfo",
+        "mojom": "skia.mojom.ImageInfo"
+      },
+      {
+        "cpp": "::SkImageInfo",
+        "mojom": "skia.mojom.BitmapN32ImageInfo"
+      }
+    ]
+  }
+]

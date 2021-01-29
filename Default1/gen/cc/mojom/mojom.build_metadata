@@ -1,0 +1,14 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/services/viz/public/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/cc/mojom/browser_controls_params.mojom",
+    "F:/Projects/37_chromium/chromium/src/cc/mojom/browser_controls_state.mojom",
+    "F:/Projects/37_chromium/chromium/src/cc/mojom/overscroll_behavior.mojom",
+    "F:/Projects/37_chromium/chromium/src/cc/mojom/render_frame_metadata.mojom",
+    "F:/Projects/37_chromium/chromium/src/cc/mojom/touch_action.mojom"
+  ]
+}

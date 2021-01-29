@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/device/bluetooth/public/mojom/deprecated_experimental_interfaces.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/chrome/browser/ui/webui/bluetooth_internals/bluetooth_internals.mojom"
+  ]
+}

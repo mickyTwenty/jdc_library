@@ -1,0 +1,44 @@
+defines = -DUSE_AURA=1 "-DCR_CLANG_REVISION=\"llvmorg-12-init-17251-g6de48655-1\"" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_NO_AUTO_LINK -D__STD_C -D_CRT_RAND_S -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_DEPRECATE -D_ATL_NO_OPENGL -D_WINDOWS -DCERT_CHAIN_PARA_HAS_EXTRA_FIELDS -DPSAPI_VERSION=2 -DWIN32 -D_SECURE_ATL -DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_UNICODE -DUNICODE -DNTDDI_VERSION=NTDDI_WIN10_VB -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00 -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -D_CRT_NONSTDC_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE
+include_dirs = -I../.. -Igen -I../../third_party/ruy/src
+cflags = -fno-delete-null-pointer-checks -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -fcomplete-member-pointers /Gy /FS /bigobj /utf-8 /Zc$:twoPhase /Zc$:sizedDealloc- /X /D__WRL_ENABLE_FUNCTION_STATICS__ -fmsc-version=1916 /Zc$:dllexportInlines- -m64 -msse3 /Brepro -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -Xclang -fdebug-compilation-dir -Xclang . -no-canonical-prefixes /Od /Ob0 /GF /Z7 -gcodeview-ghash -Xclang -debug-info-kind=constructor -ftrivial-auto-var-init=pattern /guard$:cf,nochecks /MDd -Xclang -add-plugin -Xclang find-bad-constructs -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare /W3 /wd4800 /wd4267 /wd4996 -Wno-unused-variable -Wno-misleading-indentation /WX /wd4091 /wd4127 /wd4251 /wd4275 /wd4312 /wd4324 /wd4351 /wd4355 /wd4503 /wd4589 /wd4611 /wd4100 /wd4121 /wd4244 /wd4505 /wd4510 /wd4512 /wd4610 /wd4838 /wd4995 /wd4996 /wd4456 /wd4457 /wd4458 /wd4459 /wd4200 /wd4201 /wd4204 /wd4221 /wd4245 /wd4267 /wd4305 /wd4389 /wd4702 /wd4701 /wd4703 /wd4661 /wd4706 /wd4715 -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-nonportable-include-path -Wno-psabi -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-non-c-typedef-for-linkage -Wmax-tokens
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -Wno-trigraphs /TP /GR- -I../../buildtools/third_party/libc++/trunk/include /wd4577
+label_name = ruy
+target_out_dir = obj/third_party/ruy
+target_output_name = ruy
+
+build obj/third_party/ruy/ruy/allocator.obj: cxx ../../third_party/ruy/src/ruy/allocator.cc
+build obj/third_party/ruy/ruy/apply_multiplier.obj: cxx ../../third_party/ruy/src/ruy/apply_multiplier.cc
+build obj/third_party/ruy/ruy/block_map.obj: cxx ../../third_party/ruy/src/ruy/block_map.cc
+build obj/third_party/ruy/ruy/blocking_counter.obj: cxx ../../third_party/ruy/src/ruy/blocking_counter.cc
+build obj/third_party/ruy/ruy/context.obj: cxx ../../third_party/ruy/src/ruy/context.cc
+build obj/third_party/ruy/ruy/context_get_ctx.obj: cxx ../../third_party/ruy/src/ruy/context_get_ctx.cc
+build obj/third_party/ruy/ruy/cpuinfo.obj: cxx ../../third_party/ruy/src/ruy/cpuinfo.cc
+build obj/third_party/ruy/ruy/create_trmul_params.obj: cxx ../../third_party/ruy/src/ruy/create_trmul_params.cc
+build obj/third_party/ruy/ruy/ctx.obj: cxx ../../third_party/ruy/src/ruy/ctx.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avx2.obj: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avx2.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avx512.obj: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avx512.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avxvnni.obj: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avxvnni.cc
+build obj/third_party/ruy/ruy/have_built_path_for_sse42.obj: cxx ../../third_party/ruy/src/ruy/have_built_path_for_sse42.cc
+build obj/third_party/ruy/ruy/kernel_arm32.obj: cxx ../../third_party/ruy/src/ruy/kernel_arm32.cc
+build obj/third_party/ruy/ruy/kernel_arm64.obj: cxx ../../third_party/ruy/src/ruy/kernel_arm64.cc
+build obj/third_party/ruy/ruy/kernel_avx2.obj: cxx ../../third_party/ruy/src/ruy/kernel_avx2.cc
+build obj/third_party/ruy/ruy/kernel_avx512.obj: cxx ../../third_party/ruy/src/ruy/kernel_avx512.cc
+build obj/third_party/ruy/ruy/kernel_avxvnni.obj: cxx ../../third_party/ruy/src/ruy/kernel_avxvnni.cc
+build obj/third_party/ruy/ruy/kernel_sse42.obj: cxx ../../third_party/ruy/src/ruy/kernel_sse42.cc
+build obj/third_party/ruy/ruy/pack_arm.obj: cxx ../../third_party/ruy/src/ruy/pack_arm.cc
+build obj/third_party/ruy/ruy/pack_avx2.obj: cxx ../../third_party/ruy/src/ruy/pack_avx2.cc
+build obj/third_party/ruy/ruy/pack_avx512.obj: cxx ../../third_party/ruy/src/ruy/pack_avx512.cc
+build obj/third_party/ruy/ruy/pack_avxvnni.obj: cxx ../../third_party/ruy/src/ruy/pack_avxvnni.cc
+build obj/third_party/ruy/ruy/pack_sse42.obj: cxx ../../third_party/ruy/src/ruy/pack_sse42.cc
+build obj/third_party/ruy/ruy/pmu.obj: cxx ../../third_party/ruy/src/ruy/pmu.cc
+build obj/third_party/ruy/ruy/prepacked_cache.obj: cxx ../../third_party/ruy/src/ruy/prepacked_cache.cc
+build obj/third_party/ruy/ruy/instrumentation.obj: cxx ../../third_party/ruy/src/ruy/profiler/instrumentation.cc
+build obj/third_party/ruy/ruy/profiler.obj: cxx ../../third_party/ruy/src/ruy/profiler/profiler.cc
+build obj/third_party/ruy/ruy/treeview.obj: cxx ../../third_party/ruy/src/ruy/profiler/treeview.cc
+build obj/third_party/ruy/ruy/system_aligned_alloc.obj: cxx ../../third_party/ruy/src/ruy/system_aligned_alloc.cc
+build obj/third_party/ruy/ruy/thread_pool.obj: cxx ../../third_party/ruy/src/ruy/thread_pool.cc
+build obj/third_party/ruy/ruy/trmul.obj: cxx ../../third_party/ruy/src/ruy/trmul.cc
+build obj/third_party/ruy/ruy/tune.obj: cxx ../../third_party/ruy/src/ruy/tune.cc
+build obj/third_party/ruy/ruy/wait.obj: cxx ../../third_party/ruy/src/ruy/wait.cc
+
+build obj/third_party/ruy/ruy.stamp: stamp obj/third_party/ruy/ruy/allocator.obj obj/third_party/ruy/ruy/apply_multiplier.obj obj/third_party/ruy/ruy/block_map.obj obj/third_party/ruy/ruy/blocking_counter.obj obj/third_party/ruy/ruy/context.obj obj/third_party/ruy/ruy/context_get_ctx.obj obj/third_party/ruy/ruy/cpuinfo.obj obj/third_party/ruy/ruy/create_trmul_params.obj obj/third_party/ruy/ruy/ctx.obj obj/third_party/ruy/ruy/have_built_path_for_avx2.obj obj/third_party/ruy/ruy/have_built_path_for_avx512.obj obj/third_party/ruy/ruy/have_built_path_for_avxvnni.obj obj/third_party/ruy/ruy/have_built_path_for_sse42.obj obj/third_party/ruy/ruy/kernel_arm32.obj obj/third_party/ruy/ruy/kernel_arm64.obj obj/third_party/ruy/ruy/kernel_avx2.obj obj/third_party/ruy/ruy/kernel_avx512.obj obj/third_party/ruy/ruy/kernel_avxvnni.obj obj/third_party/ruy/ruy/kernel_sse42.obj obj/third_party/ruy/ruy/pack_arm.obj obj/third_party/ruy/ruy/pack_avx2.obj obj/third_party/ruy/ruy/pack_avx512.obj obj/third_party/ruy/ruy/pack_avxvnni.obj obj/third_party/ruy/ruy/pack_sse42.obj obj/third_party/ruy/ruy/pmu.obj obj/third_party/ruy/ruy/prepacked_cache.obj obj/third_party/ruy/ruy/instrumentation.obj obj/third_party/ruy/ruy/profiler.obj obj/third_party/ruy/ruy/treeview.obj obj/third_party/ruy/ruy/system_aligned_alloc.obj obj/third_party/ruy/ruy/thread_pool.obj obj/third_party/ruy/ruy/trmul.obj obj/third_party/ruy/ruy/tune.obj obj/third_party/ruy/ruy/wait.obj

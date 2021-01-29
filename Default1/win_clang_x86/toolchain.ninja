@@ -1,0 +1,63 @@
+rule win_clang_x86_copy
+  command = F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/tool_wrapper.py recursive-mirror ${in} ${out}
+  description = COPY ${in} ${out}
+  pool = build_toolchain_action_pool
+rule win_clang_x86_cxx
+  command = ..\..\third_party\llvm-build\Release+Asserts\bin\clang-cl.exe /nologo /showIncludes:user "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" "-imsvcC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ${defines} ${include_dirs} ${cflags} ${cflags_cc} /c ${in} /Fo${out} /Fd"${target_out_dir}/${label_name}_cc.pdb"
+  description = CXX ${out}
+  deps = msvc
+rule win_clang_x86_cc
+  command = ..\..\third_party\llvm-build\Release+Asserts\bin\clang-cl.exe /nologo /showIncludes:user "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" "-imsvcC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ${defines} ${include_dirs} ${cflags} ${cflags_c} /c ${in} /Fo${out} /Fd"${target_out_dir}/${label_name}_c.pdb"
+  description = CC ${out}
+  deps = msvc
+rule win_clang_x86_rc
+  command = F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/tool_wrapper.py rc-wrapper environment.x86 rc.exe /nologo "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" "-imsvcC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" "-imsvcC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-imsvcC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ${defines} ${include_dirs} /fo${out} ${in}
+  description = RC ${out}
+  deps = msvc
+rule win_clang_x86_asm
+  command = F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/tool_wrapper.py asm-wrapper environment.x86 F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/ml.py ml.exe /nologo /Fo${out} /c ${defines} ${include_dirs} ${asmflags} ${in}
+  description = ASM ${out}
+rule win_clang_x86_stamp
+  command = cmd /c type nul > "${out}"
+  description = STAMP ${out}
+  pool = build_toolchain_action_pool
+rule win_clang_x86_link
+  command = ninja -t msvc -e environment.x86 -- ..\..\third_party\llvm-build\Release+Asserts\bin\lld-link.exe /nologo -libpath:..\..\third_party\llvm-build\Release+Asserts\lib\clang\12.0.0\lib\windows "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\lib\x86" "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib\x86" "-libpath:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x86" /OUT:${output_dir}/${target_output_name}${output_extension} /PDB:${output_dir}/${target_output_name}${output_extension}.pdb @${output_dir}/${target_output_name}${output_extension}.rsp
+  description = LINK ${out}
+  rspfile = ${output_dir}/${target_output_name}${output_extension}.rsp
+  rspfile_content = ${in_newline} ${libs} ${solibs} ${ldflags}
+  pool = build_toolchain_link_pool
+rule win_clang_x86_solink_module
+  command = ninja -t msvc -e environment.x86 -- ..\..\third_party\llvm-build\Release+Asserts\bin\lld-link.exe /nologo -libpath:..\..\third_party\llvm-build\Release+Asserts\lib\clang\12.0.0\lib\windows "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\lib\x86" "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib\x86" "-libpath:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x86" /DLL /OUT:${output_dir}/${target_output_name}${output_extension} /PDB:${output_dir}/${target_output_name}${output_extension}.pdb @${output_dir}/${target_output_name}${output_extension}.rsp
+  description = LINK_MODULE(DLL) ${out}
+  rspfile = ${output_dir}/${target_output_name}${output_extension}.rsp
+  rspfile_content = ${libs} ${solibs} ${in_newline} ${ldflags}
+  pool = build_toolchain_link_pool
+rule win_clang_x86_solink
+  command = ninja -t msvc -e environment.x86 -- ..\..\third_party\llvm-build\Release+Asserts\bin\lld-link.exe /nologo -libpath:..\..\third_party\llvm-build\Release+Asserts\lib\clang\12.0.0\lib\windows "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\lib\x86" "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib\x86" "-libpath:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x86" /IMPLIB:${output_dir}/${target_output_name}${output_extension}.lib /DLL /OUT:${output_dir}/${target_output_name}${output_extension} /PDB:${output_dir}/${target_output_name}${output_extension}.pdb @${output_dir}/${target_output_name}${output_extension}.rsp
+  description = LINK(DLL) ${out}
+  rspfile = ${output_dir}/${target_output_name}${output_extension}.rsp
+  rspfile_content = ${libs} ${solibs} ${in_newline} ${ldflags}
+  pool = build_toolchain_link_pool
+  restat = 1
+rule win_clang_x86_alink
+  command = ninja -t msvc -e environment.x86 -- ..\..\third_party\llvm-build\Release+Asserts\bin\lld-link.exe /lib /nologo -libpath:..\..\third_party\llvm-build\Release+Asserts\lib\clang\12.0.0\lib\windows "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\lib\x86" "-libpath:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\lib\x86" "-libpath:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x86" "-libpath:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x86" ${arflags} /OUT:${out} @${out}.rsp
+  description = LIB ${out}
+  rspfile = ${out}.rsp
+  rspfile_content = ${in_newline}
+
+build win_clang_x86/obj/build/config/common_deps.stamp: win_clang_x86_stamp win_clang_x86/libc++.dll.lib
+build win_clang_x86/obj/build/config/shared_library_deps.stamp: win_clang_x86_stamp win_clang_x86/obj/build/config/common_deps.stamp
+subninja win_clang_x86/obj/buildtools/third_party/libc++/libc++.ninja
+subninja win_clang_x86/obj/chrome/browser/browser_switcher/bho/browser_switcher_bho.ninja
+subninja win_clang_x86/obj/chrome/browser/browser_switcher/bho/ie_bho_idl.ninja
+rule __chrome_browser_browser_switcher_bho_ie_bho_idl_idl_action___build_toolchain_win_win_clang_x86__rule
+  command = F$:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/midl.py environment.x86 F$:/Projects/37_chromium/chromium/src/third_party/win_build_output/midl/chrome/browser/browser_switcher/bho win_clang_x86/gen/chrome/browser/browser_switcher/bho none none ${source_name_part}.h ${source_name_part}.dlldata.c ${source_name_part}_i.c ${source_name_part}_p.c ../../third_party/llvm-build/Release+Asserts/bin/clang-cl.exe ${in} /char signed /env win32 /Oicf
+  description = ACTION //chrome/browser/browser_switcher/bho:ie_bho_idl_idl_action(//build/toolchain/win:win_clang_x86)
+  restat = 1
+  pool = build_toolchain_action_pool
+
+build win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl.h win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl_i.c win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl.dlldata.c win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl_p.c: __chrome_browser_browser_switcher_bho_ie_bho_idl_idl_action___build_toolchain_win_win_clang_x86__rule ../../chrome/browser/browser_switcher/bho/ie_bho_idl.idl | ../../build/toolchain/win/midl.py
+  source_name_part = ie_bho_idl
+
+build win_clang_x86/obj/chrome/browser/browser_switcher/bho/ie_bho_idl_idl_action.stamp: win_clang_x86_stamp win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl.h win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl_i.c win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl.dlldata.c win_clang_x86/gen/chrome/browser/browser_switcher/bho/ie_bho_idl_p.c

@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/new_endpoint_types.test-mojom"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/accessibility/ax_constants_mojo.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/accessibility/ax_enums_mojo.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/range/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_action_data.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_assistant_structure.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_event.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_event_intent.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_node_data.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_relative_bounds.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_tree_data.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_tree_id.mojom",
+    "F:/Projects/37_chromium/chromium/src/ui/accessibility/mojom/ax_tree_update.mojom"
+  ]
+}

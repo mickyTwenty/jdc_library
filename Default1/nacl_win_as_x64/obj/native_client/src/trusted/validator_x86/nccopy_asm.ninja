@@ -1,0 +1,6 @@
+target_out_dir = nacl_win_as_x64/obj/native_client/src/trusted/validator_x86
+target_output_name = nccopy_asm
+
+build nacl_win_as_x64/obj/native_client/src/trusted/validator_x86/nccopy_asm/nccopycode_stores.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/validator_x86/nccopycode_stores.S
+
+build nacl_win_as_x64/obj/native_client/src/trusted/validator_x86/nccopy_asm.stamp: nacl_win_as_x64_stamp nacl_win_as_x64/obj/native_client/src/trusted/validator_x86/nccopy_asm/nccopycode_stores.obj || nacl_win_as_x64/obj/build/config/nacl/nacl_base.stamp

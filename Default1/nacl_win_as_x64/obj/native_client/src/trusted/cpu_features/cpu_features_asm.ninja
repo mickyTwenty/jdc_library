@@ -1,0 +1,6 @@
+target_out_dir = nacl_win_as_x64/obj/native_client/src/trusted/cpu_features
+target_output_name = cpu_features_asm
+
+build nacl_win_as_x64/obj/native_client/src/trusted/cpu_features/cpu_features_asm/cpu_xgetbv.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/cpu_features/arch/x86/cpu_xgetbv.S
+
+build nacl_win_as_x64/obj/native_client/src/trusted/cpu_features/cpu_features_asm.stamp: nacl_win_as_x64_stamp nacl_win_as_x64/obj/native_client/src/trusted/cpu_features/cpu_features_asm/cpu_xgetbv.obj || nacl_win_as_x64/obj/build/config/nacl/nacl_base.stamp

@@ -1,0 +1,16 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/services/network/public/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/third_party/blink/public/mojom/mojom_platform.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/content/public/common/drop_data.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/public/common/resource_usage_reporter.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/public/common/was_activated_option.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/public/common/webplugininfo.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/public/common/window_container_type.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/public/common/font_cache_win.mojom"
+  ]
+}

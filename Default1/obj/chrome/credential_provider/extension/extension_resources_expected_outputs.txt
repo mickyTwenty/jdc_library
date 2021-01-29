@@ -1,0 +1,2 @@
+gen/chrome/credential_provider/extension/grit/extension_resources.h
+gen/chrome/credential_provider/extension/grit/extension_resources.rc

@@ -1,0 +1,12 @@
+target_out_dir = nacl_win_as_x64/obj/native_client/src/trusted/service_runtime
+target_output_name = sel_asm
+
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/nacl_switch_64.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/arch/x86_64/nacl_switch_64.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/nacl_syscall_64.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/arch/x86_64/nacl_syscall_64.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/tramp_64.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/arch/x86_64/tramp_64.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/fnstcw.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/arch/x86_64/fnstcw.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/fxsaverstor.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/arch/x86_64/fxsaverstor.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/exit_fast.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/win/exception_patch/exit_fast.S
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/intercept.obj: nacl_win_as_x64_asm ../../native_client/src/trusted/service_runtime/win/exception_patch/intercept.S
+
+build nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm.stamp: nacl_win_as_x64_stamp nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/nacl_switch_64.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/nacl_syscall_64.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/tramp_64.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/fnstcw.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/fxsaverstor.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/exit_fast.obj nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm/intercept.obj || nacl_win_as_x64/obj/build/config/nacl/nacl_base.stamp

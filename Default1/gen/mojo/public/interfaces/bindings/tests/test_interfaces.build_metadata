@@ -1,0 +1,30 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/interfaces/bindings/tests/echo.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/interfaces/bindings/tests/test_deserializer_interface.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/interfaces/bindings/tests/test_mojom_import.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/interfaces/bindings/tests/test_mojom_import2.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/math_calculator.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/no_module.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/ping_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/rect.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/regression_tests.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/sample_factory.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/sample_interfaces.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/sample_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/scoping.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/serialization_test_structs.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_bad_messages.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_constants.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_data_view.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_name_generator.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_native_types.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_structs.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_sync_methods.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/test_unions.mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/interfaces/bindings/tests/validation_test_interfaces.mojom"
+  ]
+}

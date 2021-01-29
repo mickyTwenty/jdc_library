@@ -1,0 +1,19 @@
+rule nacl_win_as_x64_copy
+  command = F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/tool_wrapper.py recursive-mirror ${in} ${out}
+  description = COPY ${in} ${out}
+rule nacl_win_as_x64_asm
+  command = F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe ../../build/toolchain/win/tool_wrapper.py action-wrapper environment.x64 ${out}.rsp
+  description = GNU ASM ${out}
+  rspfile = ${out}.rsp
+  rspfile_content = "F:/Projects/37_chromium/depot_tools/bootstrap-3_8_0_chromium_8_bin/python/bin/python.exe" ../../native_client/tools/win_as.py -a x64 -p ../../ -c ../../third_party/llvm-build/Release+Asserts/bin/clang-cl.exe -o ${out} ${in}
+  deps = msvc
+rule nacl_win_as_x64_stamp
+  command = cmd /c type nul > "${out}"
+  description = STAMP ${out}
+rule nacl_win_as_x64_alink
+  command = fake
+
+subninja nacl_win_as_x64/obj/build/config/nacl/nacl_base.ninja
+subninja nacl_win_as_x64/obj/native_client/src/trusted/cpu_features/cpu_features_asm.ninja
+subninja nacl_win_as_x64/obj/native_client/src/trusted/service_runtime/sel_asm.ninja
+subninja nacl_win_as_x64/obj/native_client/src/trusted/validator_x86/nccopy_asm.ninja

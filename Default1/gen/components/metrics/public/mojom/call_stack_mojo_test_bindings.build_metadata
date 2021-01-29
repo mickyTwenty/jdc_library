@@ -1,0 +1,8 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/components/metrics/public/mojom/call_stack_mojo_bindings.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/metrics/public/mojom/call_stack_profile_collector_test.mojom"
+  ]
+}

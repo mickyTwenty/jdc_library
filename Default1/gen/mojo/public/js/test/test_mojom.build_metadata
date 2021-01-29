@@ -1,0 +1,10 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/test/module_a.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/test/module_b_1.test-mojom",
+    "F:/Projects/37_chromium/chromium/src/mojo/public/js/test/module_b_2.test-mojom"
+  ]
+}

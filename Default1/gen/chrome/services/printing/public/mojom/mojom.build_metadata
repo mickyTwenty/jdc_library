@@ -1,0 +1,17 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/printing/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/ui/gfx/geometry/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/printing/backend/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/pdf_nup_converter.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/pdf_render_settings.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/pdf_to_pwg_raster_converter.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/printing_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/pdf_to_emf_converter.mojom",
+    "F:/Projects/37_chromium/chromium/src/chrome/services/printing/public/mojom/print_backend_service.mojom"
+  ]
+}

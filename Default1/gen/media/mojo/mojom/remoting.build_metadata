@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/mojo/mojom/mojom.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/media/mojo/mojom/remoting_common.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/media/mojo/mojom/remoting.mojom"
+  ]
+}

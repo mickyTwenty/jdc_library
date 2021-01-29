@@ -1,0 +1,16 @@
+[
+  {
+    "traits_headers": [
+      "chrome/chrome_cleaner/mojom/typemaps/wstring_mojom_traits.h"
+    ],
+    "traits_sources": [
+      "typemaps/wstring_mojom_traits.cc"
+    ],
+    "types": [
+      {
+        "cpp": "::std::wstring",
+        "mojom": "chrome_cleaner.mojom.WString"
+      }
+    ]
+  }
+]

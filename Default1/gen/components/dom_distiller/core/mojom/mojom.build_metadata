@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/components/dom_distiller/core/mojom/distilled_page_prefs.mojom"
+  ]
+}

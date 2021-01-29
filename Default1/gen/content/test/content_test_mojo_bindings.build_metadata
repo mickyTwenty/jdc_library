@@ -1,0 +1,12 @@
+{
+  "deps": [
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/mojo/public/mojom/base/base.build_metadata",
+    "F:/Projects/37_chromium/chromium/src/out/Default/gen/url/mojom/url_mojom_gurl.build_metadata"
+  ],
+  "sources": [
+    "F:/Projects/37_chromium/chromium/src/content/public/test/test_service.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/test/frame_host_test_interface.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/test/test_browser_associated_interfaces.mojom",
+    "F:/Projects/37_chromium/chromium/src/content/test/test_mojo_binder_policy_applier_unittest.mojom"
+  ]
+}
