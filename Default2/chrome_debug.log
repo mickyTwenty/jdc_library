@@ -1,0 +1,10 @@
+[14052:9648:0129/071851.386:INFO:content_main_runner_impl.cc(993)] Chrome is running in full browser mode.
+[14052:9648:0129/071919.149:WARNING:account_consistency_mode_manager.cc(64)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[15224:8120:0129/071948.434:WARNING:http_cache_transaction.cc(1192)] Unable to open or create cache entry
+[15016:11692:0129/072104.536:ERROR:gpu_init.cc(426)] Passthrough is not supported, GL isdisabled
+[14052:9648:0129/072116.892:ERROR:device_event_log_impl.cc(214)] [07:21:16.853] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+[14052:9648:0129/072117.053:ERROR:device_event_log_impl.cc(214)] [07:21:17.053] USB: usb_device_handle_win.cc:1054 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+[9884:7060:0129/072139.496:ERROR:render_process_impl.cc(252)] WebFrame LEAKED 1 TIMES
+[12728:12760:0129/072150.661:ERROR:render_process_impl.cc(252)] WebFrame LEAKED 2 TIMES
+[14052:10416:0129/072152.616:WARNING:discardable_shared_memory_manager.cc(432)] Some MojoDiscardableSharedMemoryManagerImpls are still alive. They will be leaked.
+[14052:9648:0129/072152.823:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
