@@ -1,0 +1,1063 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Windows\system32> f:
+PS F:\> cd .\Projects\37_chromium\chromium\
+PS F:\Projects\37_chromium\chromium> fetch chromium
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' root
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' config --spec 'solutions = [
+  {
+    "name": "src",
+    "url": "https://chromium.googlesource.com/chromium/src.git",
+    "managed": False,
+    "custom_deps": {},
+    "custom_vars": {},
+  },
+]
+'
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' sync
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress https://chromium.googlesource.com/chromium/src.git F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736' in 'F:\Projects\37_chromium\chromium'
+1>Cloning into 'F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736'...
+1>remote: Sending approximately 24.10 GiB ...
+1>remote: Counting objects: 390332, done
+1>remote: Finding sources: 100% (711/711)
+1>remote: Total 15427424 (delta 11517472), reused 15427276 (delta 11517472)
+1>Receiving objects: 100% (15427424/15427424), 24.03 GiB | 3.33 MiB/s, done.
+1>Resolving deltas: 100% (11517472/11517472), done.
+f:\projects\37_chromium\chromium\_gclient_src_jyzkt736\.git\objects - The directory is not empty.
+Syncing projects: 100% ( 1/ 1) src
+
+src (ERROR)
+----------------------------------------
+[0:00:00] Started.
+[0:00:46]
+Traceback (most recent call last):
+  File "F:\Projects\37_chromium\depot_tools\gclient_scm.py", line 1046, in _Clone
+    gclient_utils.safe_rename(os.path.join(tmp_dir, '.git'),
+  File "F:\Projects\37_chromium\depot_tools\gclient_utils.py", line 241, in safe_rename
+    os.rename(old, new)
+PermissionError: [WinError 5] Access is denied: 'F:\\Projects\\37_chromium\\chromium\\_gclient_src_jyzkt736\\.git' -> 'F:\\Projects\\37_chromium\\chromium\\src\\.git'
+[3:51:04] _____ removing non-empty tmp dir F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736
+----------------------------------------
+Traceback (most recent call last):
+  File "F:\Projects\37_chromium\depot_tools\metrics.py", line 267, in print_notice_and_exit
+    yield
+  File "F:\Projects\37_chromium\depot_tools\gclient.py", line 3199, in <module>
+    sys.exit(main(sys.argv[1:]))
+  File "F:\Projects\37_chromium\depot_tools\gclient.py", line 3185, in main
+    return dispatcher.execute(OptionParser(), argv)
+  File "F:\Projects\37_chromium\depot_tools\subcommand.py", line 252, in execute
+    return command(parser, args[1:])
+  File "F:\Projects\37_chromium\depot_tools\gclient.py", line 2739, in CMDsync
+    ret = client.RunOnDeps('update', args)
+  File "F:\Projects\37_chromium\depot_tools\gclient.py", line 1779, in RunOnDeps
+    work_queue.flush(revision_overrides, command, args, options=self._options,
+  File "F:\Projects\37_chromium\depot_tools\gclient_utils.py", line 968, in flush
+    reraise(e[0], e[1], e[2])
+  File "F:\Projects\37_chromium\depot_tools\gclient_utils.py", line 67, in reraise
+    raise value
+  File "F:\Projects\37_chromium\depot_tools\gclient_utils.py", line 1045, in run
+    self.item.run(*self.args, **self.kwargs)
+  File "F:\Projects\37_chromium\depot_tools\gclient.py", line 925, in run
+    self._got_revision = self._used_scm.RunCommand(command, options, args,
+  File "F:\Projects\37_chromium\depot_tools\gclient_scm.py", line 132, in RunCommand
+    return getattr(self, command)(options, args, file_list)
+  File "F:\Projects\37_chromium\depot_tools\gclient_scm.py", line 546, in update
+    self._Clone(revision, url, options)
+  File "F:\Projects\37_chromium\depot_tools\gclient_scm.py", line 1046, in _Clone
+    gclient_utils.safe_rename(os.path.join(tmp_dir, '.git'),
+  File "F:\Projects\37_chromium\depot_tools\gclient_utils.py", line 241, in safe_rename
+    os.rename(old, new)
+PermissionError: [WinError 5] Access is denied: 'F:\\Projects\\37_chromium\\chromium\\_gclient_src_jyzkt736\\.git' -> 'F:\\Projects\\37_chromium\\chromium\\src\\.git'
+Subprocess failed with return code 1.
+PS F:\Projects\37_chromium\chromium> cd ..
+PS F:\Projects\37_chromium> rm .\chromium\
+
+Confirm
+The item at F:\Projects\37_chromium\chromium\ has children and the Recurse parameter was not specified. If you
+continue, all children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): a
+rm : Directory F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736\.git cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (.git:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+rm : Directory F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736 cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (_gclient_src_jyzkt736:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+rm : Directory F:\Projects\37_chromium\chromium\ cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (F:\Projects\37_chromium\chromium\:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+PS F:\Projects\37_chromium> rm .\chromium\
+
+Confirm
+The item at F:\Projects\37_chromium\chromium\ has children and the Recurse parameter was not specified. If you
+continue, all children will be removed with the item. Are you sure you want to continue?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): a
+rm : Cannot remove item F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736\.git: You do not have sufficient access
+rights to perform this operation.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (.git:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : RemoveFileSystemItemUnAuthorizedAccess,Microsoft.PowerShell.Commands.RemoveItemCommand
+rm : Directory F:\Projects\37_chromium\chromium\_gclient_src_jyzkt736 cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (_gclient_src_jyzkt736:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+rm : Directory F:\Projects\37_chromium\chromium\ cannot be removed because it is not empty.
+At line:1 char:1
++ rm .\chromium\
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (F:\Projects\37_chromium\chromium\:DirectoryInfo) [Remove-Item], IOException
+    + FullyQualifiedErrorId : DirectoryNotEmpty,Microsoft.PowerShell.Commands.RemoveItemCommand
+
+PS F:\Projects\37_chromium> ls
+
+
+    Directory: F:\Projects\37_chromium
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/28/2021  10:08 AM                depot_tools
+-a----        1/28/2021   9:58 AM       22849447 depot_tools.zip
+
+
+PS F:\Projects\37_chromium> mkdir chromium
+
+
+    Directory: F:\Projects\37_chromium
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/28/2021   6:37 PM                chromium
+
+
+PS F:\Projects\37_chromium> cd .\chromium\
+PS F:\Projects\37_chromium\chromium> ls
+PS F:\Projects\37_chromium\chromium> where python
+PS F:\Projects\37_chromium\chromium> gclient
+Usage: gclient.py <command> [options]
+
+Meta checkout dependency manager for Git.
+
+Commands are:
+  config   creates a .gclient file in the current directory
+  diff     displays local diff for every dependencies
+  fetch    fetches upstream commits for all modules
+  flatten  flattens the solutions into a single DEPS file
+  getdep   gets revision information and variable values from a DEPS file
+  grep     greps through git repos managed by gclient
+  help     prints list of commands or help for a specific command
+  metrics  reports, and optionally modifies, the status of metric collection
+  pack     generates a patch which can be applied at the root of the tree
+  recurse  operates [command args ...] on all the dependencies
+  revert   reverts all modifications in every dependencies
+  revinfo  outputs revision info mapping for the client and its dependencies
+  root     outputs the solution root (or current dir if there isn't one)
+  runhooks runs hooks for files that have been modified in the local working copy
+  setdep   modifies dependency revisions and variable values in a DEPS file
+  status   shows modification status for every dependencies
+  sync     checkout/update all modules
+  validate validates the .gclient and DEPS syntax
+  verify   verifies the DEPS file deps are only from allowed_hosts
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -j JOBS, --jobs=JOBS  Specify how many SCM commands can run in parallel;
+                        defaults to 8 on this machine
+  -v, --verbose         Produces additional output for diagnostics. Can be
+                        used up to three times for more logging info.
+  --gclientfile=CONFIG_FILENAME
+                        Specify an alternate .gclient file
+  --spec=SPEC           create a gclient file containing the provided string.
+                        Due to Cygwin/Python brokenness, it can't contain any
+                        newlines.
+  --no-nag-max          Ignored for backwards compatibility.
+PS F:\Projects\37_chromium\chromium> fetch chromium
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' root
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' config --spec 'solutions = [
+  {
+    "name": "src",
+    "url": "https://chromium.googlesource.com/chromium/src.git",
+    "managed": False,
+    "custom_deps": {},
+    "custom_vars": {},
+  },
+]
+'
+Running: 'C:\Users\Micky\.vpython-root\575a31\Scripts\python.exe' 'F:\Projects\37_chromium\depot_tools\gclient.py' sync
+1>________ running 'git -c core.deltaBaseCacheLimit=2g clone --no-checkout --progress https://chromium.googlesource.com/chromium/src.git F:\Projects\37_chromium\chromium\_gclient_src_pmk3o0of' in 'F:\Projects\37_chromium\chromium'
+1>Cloning into 'F:\Projects\37_chromium\chromium\_gclient_src_pmk3o0of'...
+1>remote: Sending approximately 24.06 GiB ...
+1>remote: Counting objects: 392036, done
+1>remote: Finding sources: 100% (2415/2415)
+1>remote: Total 15429652 (delta 11518079), reused 15428826 (delta 11518079)
+1>Receiving objects: 100% (15429652/15429652), 24.05 GiB | 3.16 MiB/s, done.
+1>Resolving deltas: 100% (11518079/11518079), done.
+
+[4:03:40] Still working on:
+[4:03:40]   src
+
+[4:03:50] Still working on:
+[4:03:50]   src
+
+[4:04:00] Still working on:
+[4:04:00]   src
+
+[4:04:10] Still working on:
+[4:04:10]   src
+
+[4:04:20] Still working on:
+[4:04:20]   src
+
+[4:04:30] Still working on:
+[4:04:30]   src
+
+[4:04:40] Still working on:
+[4:04:40]   src
+
+[4:04:50] Still working on:
+[4:04:50]   src
+
+[4:05:00] Still working on:
+[4:05:00]   src
+
+[4:05:10] Still working on:
+[4:05:10]   src
+
+[4:05:20] Still working on:
+[4:05:20]   src
+
+[4:05:30] Still working on:
+[4:05:30]   src
+
+[4:05:40] Still working on:
+[4:05:40]   src
+
+[4:05:50] Still working on:
+[4:05:50]   src
+
+[4:06:00] Still working on:
+[4:06:00]   src
+
+[4:06:10] Still working on:
+[4:06:10]   src
+
+[4:06:20] Still working on:
+[4:06:20]   src
+
+[4:06:30] Still working on:
+[4:06:30]   src
+
+[4:06:40] Still working on:
+[4:06:40]   src
+
+[4:06:50] Still working on:
+[4:06:50]   src
+
+[4:07:00] Still working on:
+[4:07:00]   src
+
+[4:07:10] Still working on:
+[4:07:10]   src
+
+[4:07:20] Still working on:
+[4:07:20]   src
+
+[4:07:30] Still working on:
+[4:07:30]   src
+
+[4:07:40] Still working on:
+[4:07:40]   src
+
+[4:07:50] Still working on:
+[4:07:50]   src
+
+[4:08:00] Still working on:
+[4:08:00]   src
+
+[4:08:10] Still working on:
+[4:08:10]   src
+
+[4:08:20] Still working on:
+[4:08:20]   src
+
+[4:08:30] Still working on:
+[4:08:30]   src
+
+[4:08:40] Still working on:
+[4:08:40]   src
+
+[4:08:50] Still working on:
+[4:08:50]   src
+
+[4:09:00] Still working on:
+[4:09:00]   src
+
+[4:09:10] Still working on:
+[4:09:10]   src
+
+[4:09:20] Still working on:
+[4:09:20]   src
+
+[4:09:30] Still working on:
+[4:09:30]   src
+
+[4:09:40] Still working on:
+[4:09:40]   src
+
+[4:09:50] Still working on:
+[4:09:50]   src
+
+[4:10:00] Still working on:
+[4:10:00]   src
+
+[4:10:10] Still working on:
+[4:10:10]   src
+
+[4:10:20] Still working on:
+[4:10:20]   src
+
+[4:10:30] Still working on:
+[4:10:30]   src
+
+[4:10:40] Still working on:
+[4:10:40]   src
+
+[4:10:50] Still working on:
+[4:10:50]   src
+
+[4:11:00] Still working on:
+[4:11:00]   src
+
+[4:11:10] Still working on:
+[4:11:10]   src
+
+[4:11:21] Still working on:
+[4:11:21]   src
+
+[4:11:31] Still working on:
+[4:11:31]   src
+
+[4:11:41] Still working on:
+[4:11:41]   src
+1>Syncing projects:   0% ( 0/ 2)
+[4:11:45] Still working on:
+[4:11:45]   src
+Syncing projects:  33% (35/104) src/third_party/googletest/src
+[4:17:36] Still working on:
+[4:17:36]   src/native_client
+[4:17:36]   src/third_party/angle
+[4:17:36]   src/third_party/boringssl/src
+[4:17:36]   src/third_party/catapult
+[4:17:36]   src/third_party/devtools-frontend/src
+[4:17:36]   src/third_party/ffmpeg
+[4:17:36]   src/third_party/grpc/src
+[4:17:36]   src/third_party/harfbuzz-ng/src
+
+[4:17:44] Still working on:
+[4:17:44]   src/native_client
+[4:17:44]   src/third_party/angle
+[4:17:44]   src/third_party/boringssl/src
+[4:17:44]   src/third_party/catapult
+[4:17:44]   src/third_party/devtools-frontend/src
+[4:17:44]   src/third_party/ffmpeg
+[4:17:44]   src/third_party/grpc/src
+[4:17:44]   src/third_party/harfbuzz-ng/src
+Syncing projects:  35% (37/104) src/third_party/boringssl/src
+[4:19:13] Still working on:
+[4:19:13]   src/native_client
+[4:19:13]   src/third_party/angle
+[4:19:13]   src/third_party/catapult
+[4:19:13]   src/third_party/devtools-frontend/src
+[4:19:13]   src/third_party/ffmpeg
+[4:19:13]   src/third_party/grpc/src
+[4:19:13]   src/third_party/hunspell_dictionaries
+[4:19:13]   src/third_party/icu
+
+[4:19:23] Still working on:
+[4:19:23]   src/native_client
+[4:19:23]   src/third_party/angle
+[4:19:23]   src/third_party/catapult
+[4:19:23]   src/third_party/devtools-frontend/src
+[4:19:23]   src/third_party/ffmpeg
+[4:19:23]   src/third_party/grpc/src
+[4:19:23]   src/third_party/hunspell_dictionaries
+[4:19:23]   src/third_party/icu
+
+[4:19:33] Still working on:
+[4:19:33]   src/native_client
+[4:19:33]   src/third_party/angle
+[4:19:33]   src/third_party/catapult
+[4:19:33]   src/third_party/devtools-frontend/src
+[4:19:33]   src/third_party/ffmpeg
+[4:19:33]   src/third_party/grpc/src
+[4:19:33]   src/third_party/hunspell_dictionaries
+[4:19:33]   src/third_party/icu
+
+[4:19:43] Still working on:
+[4:19:43]   src/native_client
+[4:19:43]   src/third_party/angle
+[4:19:43]   src/third_party/catapult
+[4:19:43]   src/third_party/devtools-frontend/src
+[4:19:43]   src/third_party/ffmpeg
+[4:19:43]   src/third_party/grpc/src
+[4:19:43]   src/third_party/hunspell_dictionaries
+[4:19:43]   src/third_party/icu
+
+[4:19:53] Still working on:
+[4:19:53]   src/native_client
+[4:19:53]   src/third_party/angle
+[4:19:53]   src/third_party/catapult
+[4:19:53]   src/third_party/devtools-frontend/src
+[4:19:53]   src/third_party/ffmpeg
+[4:19:53]   src/third_party/grpc/src
+[4:19:53]   src/third_party/hunspell_dictionaries
+[4:19:53]   src/third_party/icu
+
+[4:19:53] Still working on:
+[4:19:53]   src/native_client
+[4:19:53]   src/third_party/angle
+[4:19:53]   src/third_party/catapult
+[4:19:53]   src/third_party/devtools-frontend/src
+[4:19:53]   src/third_party/ffmpeg
+[4:19:53]   src/third_party/grpc/src
+[4:19:53]   src/third_party/hunspell_dictionaries
+[4:19:53]   src/third_party/icu
+Syncing projects:  72% (78/108) src/third_party/snappy/src
+[4:27:40] Still working on:
+[4:27:40]   src/third_party/libaom/source/libaom
+[4:27:40]   src/third_party/pdfium
+[4:27:40]   src/third_party/perfetto
+[4:27:40]   src/third_party/perl
+[4:27:40]   src/third_party/skia
+[4:27:40]   src/third_party/sqlite/src
+[4:27:40]   src/third_party/swiftshader
+[4:27:40]   src/third_party/tflite/src
+
+[4:27:50] Still working on:
+[4:27:50]   src/third_party/libaom/source/libaom
+[4:27:50]   src/third_party/pdfium
+[4:27:50]   src/third_party/perfetto
+[4:27:50]   src/third_party/perl
+[4:27:50]   src/third_party/skia
+[4:27:50]   src/third_party/sqlite/src
+[4:27:50]   src/third_party/swiftshader
+[4:27:50]   src/third_party/tflite/src
+
+[4:27:57] Still working on:
+[4:27:57]   src/third_party/libaom/source/libaom
+[4:27:57]   src/third_party/pdfium
+[4:27:57]   src/third_party/perfetto
+[4:27:57]   src/third_party/perl
+[4:27:57]   src/third_party/skia
+[4:27:57]   src/third_party/sqlite/src
+[4:27:57]   src/third_party/swiftshader
+[4:27:57]   src/third_party/tflite/src
+Syncing projects:  85% (99/116) src\third_party\angle\third_party\glmark2\src
+[4:32:22] Still working on:
+[4:32:22]   src/third_party/libaom/source/libaom
+[4:32:22]   src/third_party/skia
+[4:32:22]   src/third_party/swiftshader
+[4:32:22]   src/third_party/tflite/src
+[4:32:22]   src/third_party/webrtc
+[4:32:22]   src/v8
+[4:32:22]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:32:22]   src\third_party\angle\third_party\rapidjson\src
+
+[4:32:31] Still working on:
+[4:32:31]   src/third_party/libaom/source/libaom
+[4:32:31]   src/third_party/skia
+[4:32:31]   src/third_party/swiftshader
+[4:32:31]   src/third_party/tflite/src
+[4:32:31]   src/third_party/webrtc
+[4:32:31]   src/v8
+[4:32:31]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:32:31]   src\third_party\angle\third_party\rapidjson\src
+Syncing projects:  94% (110/116) src\third_party\vulkan-deps\vulkan-loader\src
+[4:35:35] Still working on:
+[4:35:35]   src/third_party/skia
+[4:35:35]   src/third_party/tflite/src
+[4:35:35]   src/third_party/webrtc
+[4:35:35]   src/v8
+[4:35:35]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:35:35]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:35:46] Still working on:
+[4:35:46]   src/third_party/skia
+[4:35:46]   src/third_party/tflite/src
+[4:35:46]   src/third_party/webrtc
+[4:35:46]   src/v8
+[4:35:46]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:35:46]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:35:56] Still working on:
+[4:35:56]   src/third_party/skia
+[4:35:56]   src/third_party/tflite/src
+[4:35:56]   src/third_party/webrtc
+[4:35:56]   src/v8
+[4:35:56]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:35:56]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:06] Still working on:
+[4:36:06]   src/third_party/skia
+[4:36:06]   src/third_party/tflite/src
+[4:36:06]   src/third_party/webrtc
+[4:36:06]   src/v8
+[4:36:06]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:06]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:16] Still working on:
+[4:36:16]   src/third_party/skia
+[4:36:16]   src/third_party/tflite/src
+[4:36:16]   src/third_party/webrtc
+[4:36:16]   src/v8
+[4:36:16]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:16]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:26] Still working on:
+[4:36:26]   src/third_party/skia
+[4:36:26]   src/third_party/tflite/src
+[4:36:26]   src/third_party/webrtc
+[4:36:26]   src/v8
+[4:36:26]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:26]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:36] Still working on:
+[4:36:36]   src/third_party/skia
+[4:36:36]   src/third_party/tflite/src
+[4:36:36]   src/third_party/webrtc
+[4:36:36]   src/v8
+[4:36:36]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:36]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:46] Still working on:
+[4:36:46]   src/third_party/skia
+[4:36:46]   src/third_party/tflite/src
+[4:36:46]   src/third_party/webrtc
+[4:36:46]   src/v8
+[4:36:46]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:46]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:36:56] Still working on:
+[4:36:56]   src/third_party/skia
+[4:36:56]   src/third_party/tflite/src
+[4:36:56]   src/third_party/webrtc
+[4:36:56]   src/v8
+[4:36:56]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:36:56]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:37:06] Still working on:
+[4:37:06]   src/third_party/skia
+[4:37:06]   src/third_party/tflite/src
+[4:37:06]   src/third_party/webrtc
+[4:37:06]   src/v8
+[4:37:06]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:37:06]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+
+[4:37:07] Still working on:
+[4:37:07]   src/third_party/skia
+[4:37:07]   src/third_party/tflite/src
+[4:37:07]   src/third_party/webrtc
+[4:37:07]   src/v8
+[4:37:07]   src\third_party\angle\third_party\VK-GL-CTS\src
+[4:37:07]   src\third_party\vulkan-deps\vulkan-validation-layers\src
+Syncing projects:  95% (111/116) src\third_party\vulkan-deps\vulkan-validation-layers\src
+[4:38:07] Still working on:
+[4:38:07]   src/third_party/skia
+[4:38:07]   src/third_party/tflite/src
+[4:38:07]   src/third_party/webrtc
+[4:38:07]   src/v8
+[4:38:07]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:38:17] Still working on:
+[4:38:17]   src/third_party/skia
+[4:38:17]   src/third_party/tflite/src
+[4:38:17]   src/third_party/webrtc
+[4:38:17]   src/v8
+[4:38:17]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:38:27] Still working on:
+[4:38:27]   src/third_party/skia
+[4:38:27]   src/third_party/tflite/src
+[4:38:27]   src/third_party/webrtc
+[4:38:27]   src/v8
+[4:38:27]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:38:37] Still working on:
+[4:38:37]   src/third_party/skia
+[4:38:37]   src/third_party/tflite/src
+[4:38:37]   src/third_party/webrtc
+[4:38:37]   src/v8
+[4:38:37]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:38:47] Still working on:
+[4:38:47]   src/third_party/skia
+[4:38:47]   src/third_party/tflite/src
+[4:38:47]   src/third_party/webrtc
+[4:38:47]   src/v8
+[4:38:47]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:38:57] Still working on:
+[4:38:57]   src/third_party/skia
+[4:38:57]   src/third_party/tflite/src
+[4:38:57]   src/third_party/webrtc
+[4:38:57]   src/v8
+[4:38:57]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:39:07] Still working on:
+[4:39:07]   src/third_party/skia
+[4:39:07]   src/third_party/tflite/src
+[4:39:07]   src/third_party/webrtc
+[4:39:07]   src/v8
+[4:39:07]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:39:17] Still working on:
+[4:39:17]   src/third_party/skia
+[4:39:17]   src/third_party/tflite/src
+[4:39:17]   src/third_party/webrtc
+[4:39:17]   src/v8
+[4:39:17]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:39:27] Still working on:
+[4:39:27]   src/third_party/skia
+[4:39:27]   src/third_party/tflite/src
+[4:39:27]   src/third_party/webrtc
+[4:39:27]   src/v8
+[4:39:27]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:39:37] Still working on:
+[4:39:37]   src/third_party/skia
+[4:39:37]   src/third_party/tflite/src
+[4:39:37]   src/third_party/webrtc
+[4:39:37]   src/v8
+[4:39:37]   src\third_party\angle\third_party\VK-GL-CTS\src
+
+[4:39:43] Still working on:
+[4:39:43]   src/third_party/skia
+[4:39:43]   src/third_party/tflite/src
+[4:39:43]   src/third_party/webrtc
+[4:39:43]   src/v8
+[4:39:43]   src\third_party\angle\third_party\VK-GL-CTS\src
+Syncing projects: 100% (116/116), done.
+Hook 'vpython.bat src/build/landmines.py' took 195.29 secs
+Hook 'vpython.bat src/third_party/depot_tools/update_depot_tools_toggle.py --disable' took 19.33 secs
+Hook 'vpython.bat src/tools/remove_stale_pyc_files.py src/android_webview/tools src/build/android src/gpu/gles2_conform_support src/infra src/ppapi src/printing src/third_party/blink/renderer/build/scripts src/third_party/blink/tools src/third_party/catapult src/tools' took 11.73 secs
+Running hooks:   6% ( 6/97) nacltools
+________ running 'vpython.bat src/build/download_nacl_toolchains.py --mode nacl_core_sdk sync --extract' in 'F:\Projects\37_chromium\chromium'
+INFO: --Syncing nacl_arm_glibc to revision 053185d68ed3b96640f15c4ae457b1ff373c6cac--
+INFO: Downloading package archive: binutils_arm_i686_w64_mingw32.tgz (1/6)
+INFO: Downloading package archive: gcc_arm_i686_w64_mingw32.tgz (2/6)
+INFO: Downloading package archive: gcc_libs_arm.tgz (3/6)
+INFO: Downloading package archive: gdb_i686_w64_mingw32.tgz (4/6)
+INFO: Downloading package archive: glibc_arm.tgz (5/6)
+INFO: Downloading package archive: sdk_libs_arm.tgz (6/6)
+INFO: --Syncing nacl_x86_glibc to revision 9ff1dc0c05b45941b86bed303a87a9eac17192ea--
+INFO: Downloading package archive: core_sdk.tar.bz2 (1/3)
+INFO: Downloading package archive: gdb_i686_w64_mingw32.tgz (2/3)
+INFO: Downloading package archive: toolchain.tar.bz2 (3/3)
+INFO: --Syncing nacl_x86_newlib to revision 11953a35fcd4f999b097a343bc49d89f94af21a8--
+INFO: Downloading package archive: core_sdk.tgz (1/3)
+INFO: Downloading package archive: gdb_i686_w64_mingw32.tgz (2/3)
+INFO: Downloading package archive: naclsdk.tgz (3/3)
+INFO: --Syncing pnacl_newlib to revision f45e60c61cc1ae967e6f5fefc8f3e560e3b3c501--
+INFO: Downloading package archive: binutils_i686_w64_mingw32.tgz (1/48)
+INFO: Downloading package archive: binutils_x86_i686_w64_mingw32.tgz (2/48)
+INFO: Downloading package archive: compiler_rt_bc_arm_bc.tgz (3/48)
+INFO: Downloading package archive: compiler_rt_bc_i686_bc.tgz (4/48)
+INFO: Downloading package archive: compiler_rt_bc_le32.tgz (5/48)
+INFO: Downloading package archive: compiler_rt_bc_x86_64_bc.tgz (6/48)
+INFO: Downloading package archive: core_sdk_libs_arm.tgz (7/48)
+INFO: Downloading package archive: core_sdk_libs_i686.tgz (8/48)
+INFO: Downloading package archive: core_sdk_libs_le32.tgz (9/48)
+INFO: Downloading package archive: core_sdk_libs_mipsel.tgz (10/48)
+INFO: Downloading package archive: core_sdk_libs_x86_64.tgz (11/48)
+INFO: Downloading package archive: driver_i686_w64_mingw32.tgz (12/48)
+INFO: Downloading package archive: libcxx_arm.tgz (13/48)
+INFO: Downloading package archive: libcxx_arm_bc.tgz (14/48)
+INFO: Downloading package archive: libcxx_i686.tgz (15/48)
+INFO: Downloading package archive: libcxx_i686_bc.tgz (16/48)
+INFO: Downloading package archive: libcxx_le32.tgz (17/48)
+INFO: Downloading package archive: libcxx_mipsel.tgz (18/48)
+INFO: Downloading package archive: libcxx_x86_64.tgz (19/48)
+INFO: Downloading package archive: libcxx_x86_64_bc.tgz (20/48)
+INFO: Downloading package archive: libgcc_eh_arm.tgz (21/48)
+INFO: Downloading package archive: libgcc_eh_mips32.tgz (22/48)
+INFO: Downloading package archive: libgcc_eh_x86_32.tgz (23/48)
+INFO: Downloading package archive: libgcc_eh_x86_64.tgz (24/48)
+INFO: Downloading package archive: libs_support_arm.tgz (25/48)
+INFO: Downloading package archive: libs_support_arm_bc.tgz (26/48)
+INFO: Downloading package archive: libs_support_i686.tgz (27/48)
+INFO: Downloading package archive: libs_support_i686_bc.tgz (28/48)
+INFO: Downloading package archive: libs_support_le32.tgz (29/48)
+INFO: Downloading package archive: libs_support_mipsel.tgz (30/48)
+INFO: Downloading package archive: libs_support_translator_arm.tgz (31/48)
+INFO: Downloading package archive: libs_support_translator_arm_nonsfi.tgz (32/48)
+INFO: Downloading package archive: libs_support_translator_mips32.tgz (33/48)
+INFO: Downloading package archive: libs_support_translator_x86_32.tgz (34/48)
+INFO: Downloading package archive: libs_support_translator_x86_32_nonsfi.tgz (35/48)
+INFO: Downloading package archive: libs_support_translator_x86_64.tgz (36/48)
+INFO: Downloading package archive: libs_support_x86_64.tgz (37/48)
+INFO: Downloading package archive: libs_support_x86_64_bc.tgz (38/48)
+INFO: Downloading package archive: llvm_i686_w64_mingw32.tgz (39/48)
+INFO: Downloading package archive: metadata.tgz (40/48)
+INFO: Downloading package archive: newlib_arm.tgz (41/48)
+INFO: Downloading package archive: newlib_arm_bc.tgz (42/48)
+INFO: Downloading package archive: newlib_i686.tgz (43/48)
+INFO: Downloading package archive: newlib_i686_bc.tgz (44/48)
+INFO: Downloading package archive: newlib_le32.tgz (45/48)
+INFO: Downloading package archive: newlib_mipsel.tgz (46/48)
+INFO: Downloading package archive: newlib_x86_64.tgz (47/48)
+INFO: Downloading package archive: newlib_x86_64_bc.tgz (48/48)
+INFO: --Syncing pnacl_translator to revision f45e60c61cc1ae967e6f5fefc8f3e560e3b3c501--
+INFO: Downloading package archive: sandboxed_translators.tgz (1/1)
+INFO: Extracting package (nacl_arm_glibc) to directory: F:\Projects\37_chromium\chromium\src\native_client\toolchain\win_x86\nacl_arm_glibc
+INFO: Extracting binutils_arm_i686_w64_mingw32.tgz (1/6)
+|------------------------------------------------|
+..................................................
+INFO: Extracting gcc_arm_i686_w64_mingw32.tgz (2/6)
+|------------------------------------------------|
+..................................................
+INFO: Extracting gcc_libs_arm.tgz (3/6)
+|------------------------------------------------|
+.................................................
+INFO: Extracting gdb_i686_w64_mingw32.tgz (4/6)
+|------------------------------------------------|
+.................................................
+INFO: Extracting glibc_arm.tgz (5/6)
+|------------------------------------------------|
+.................................................
+INFO: Extracting sdk_libs_arm.tgz (6/6)
+|------------------------------------------------|
+.................................................
+INFO: Extracting package (nacl_x86_glibc) to directory: F:\Projects\37_chromium\chromium\src\native_client\toolchain\win_x86\nacl_x86_glibc
+INFO: Extracting core_sdk.tar.bz2 (1/3)
+|------------------------------------------------|
+..................................................
+INFO: Extracting gdb_i686_w64_mingw32.tgz (2/3)
+|------------------------------------------------|
+..................................................
+INFO: Extracting toolchain.tar.bz2 (3/3)
+|------------------------------------------------|
+..................................................
+INFO: Extracting package (nacl_x86_newlib) to directory: F:\Projects\37_chromium\chromium\src\native_client\toolchain\win_x86\nacl_x86_newlib
+INFO: Extracting core_sdk.tgz (1/3)
+|------------------------------------------------|
+..............................................
+INFO: Extracting gdb_i686_w64_mingw32.tgz (2/3)
+|------------------------------------------------|
+..................................................
+INFO: Extracting naclsdk.tgz (3/3)
+|------------------------------------------------|
+..................................................
+INFO: Extracting package (pnacl_newlib) to directory: F:\Projects\37_chromium\chromium\src\native_client\toolchain\win_x86\pnacl_newlib
+INFO: Extracting binutils_i686_w64_mingw32.tgz (1/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting binutils_x86_i686_w64_mingw32.tgz (2/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting compiler_rt_bc_arm_bc.tgz (3/48)
+|------------------------------------------------|
+.....
+INFO: Extracting compiler_rt_bc_i686_bc.tgz (4/48)
+|------------------------------------------------|
+.....
+INFO: Extracting compiler_rt_bc_le32.tgz (5/48)
+|------------------------------------------------|
+.....
+INFO: Extracting compiler_rt_bc_x86_64_bc.tgz (6/48)
+|------------------------------------------------|
+.....
+INFO: Extracting core_sdk_libs_arm.tgz (7/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting core_sdk_libs_i686.tgz (8/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting core_sdk_libs_le32.tgz (9/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting core_sdk_libs_mipsel.tgz (10/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting core_sdk_libs_x86_64.tgz (11/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting driver_i686_w64_mingw32.tgz (12/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_arm.tgz (13/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_arm_bc.tgz (14/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_i686.tgz (15/48)
+|------------------------------------------------|
+
+INFO: Extracting libcxx_i686_bc.tgz (16/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_le32.tgz (17/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_mipsel.tgz (18/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_x86_64.tgz (19/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libcxx_x86_64_bc.tgz (20/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting libgcc_eh_arm.tgz (21/48)
+|------------------------------------------------|
+
+INFO: Extracting libgcc_eh_mips32.tgz (22/48)
+|------------------------------------------------|
+
+INFO: Extracting libgcc_eh_x86_32.tgz (23/48)
+|------------------------------------------------|
+.
+INFO: Extracting libgcc_eh_x86_64.tgz (24/48)
+|------------------------------------------------|
+.
+INFO: Extracting libs_support_arm.tgz (25/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_arm_bc.tgz (26/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_i686.tgz (27/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_i686_bc.tgz (28/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_le32.tgz (29/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_mipsel.tgz (30/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_arm.tgz (31/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_arm_nonsfi.tgz (32/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_mips32.tgz (33/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_x86_32.tgz (34/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_x86_32_nonsfi.tgz (35/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_translator_x86_64.tgz (36/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_x86_64.tgz (37/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting libs_support_x86_64_bc.tgz (38/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting llvm_i686_w64_mingw32.tgz (39/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting metadata.tgz (40/48)
+|------------------------------------------------|
+......................................
+INFO: Extracting newlib_arm.tgz (41/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting newlib_arm_bc.tgz (42/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting newlib_i686.tgz (43/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting newlib_i686_bc.tgz (44/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting newlib_le32.tgz (45/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting newlib_mipsel.tgz (46/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting newlib_x86_64.tgz (47/48)
+|------------------------------------------------|
+.................................................
+INFO: Extracting newlib_x86_64_bc.tgz (48/48)
+|------------------------------------------------|
+..................................................
+INFO: Extracting package (pnacl_translator) to directory: F:\Projects\37_chromium\chromium\src\native_client\toolchain\win_x86\pnacl_translator
+INFO: Extracting sandboxed_translators.tgz (1/1)
+|------------------------------------------------|
+.................................................
+Hook 'vpython.bat src/build/download_nacl_toolchains.py --mode nacl_core_sdk sync --extract' took 338.42 secs
+Running hooks:  16% (16/97) clang
+________ running 'vpython.bat src/tools/clang/scripts/update.py' in 'F:\Projects\37_chromium\chromium'
+Downloading https://commondatastorage.googleapis.com/chromium-browser-clang/Win/clang-llvmorg-12-init-17251-g6de48655-1.tgz .......... Done.
+Hook 'vpython.bat src/tools/clang/scripts/update.py' took 26.39 secs
+Running hooks:  25% (25/97) clang_format_win
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-clang-format -s src/buildtools/win/clang-format.exe.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/buildtools/win/clang-format.exe@d4afd4eba27022f5f6d518133aebde57281677c9...
+Downloading 1 files took 74.397000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-clang-format -s src/buildtools/win/clang-format.exe.sha1' took 75.78 secs
+Running hooks:  28% (28/97) rc_win
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-browser-clang/rc -s src/build/toolchain/win/rc/win/rc.exe.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/build/toolchain/win/rc/win/rc.exe@ba51d69039ffb88310b72b6568efa9f0de148f8f...
+Downloading 1 files took 11.785000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-browser-clang/rc -s src/build/toolchain/win/rc/win/rc.exe.sha1' took 12.56 secs
+Running hooks:  31% (31/97) test_fonts
+________ running 'download_from_google_storage --no_resume --extract --no_auth --bucket chromium-fonts -s src/third_party/test_fonts/test_fonts.tar.gz.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/third_party/test_fonts/test_fonts.tar.gz@cd96fc55dc243f6c6f4cb63ad117cad6cd48dceb...
+0> Extracting 33 entries from src/third_party/test_fonts/test_fonts.tar.gz to src/third_party/test_fonts/test_fonts
+Downloading 1 files took 24.234000 second(s)
+Hook 'download_from_google_storage --no_resume --extract --no_auth --bucket chromium-fonts -s src/third_party/test_fonts/test_fonts.tar.gz.sha1' took 24.71 secs
+Hook 'download_from_google_storage --no_auth --quiet --bucket chromium-webrtc-resources -d src/third_party/opus/tests/resources' took 14.99 secs
+Running hooks:  35% (34/97) apache_win32
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --directory --recursive --no_auth --num_threads=16 --bucket chromium-apache-win32 src/third_party/apache-win32' in 'F:\Projects\37_chromium\chromium'
+14> Downloading src/third_party/apache-win32\bin\api-ms-win-core-namedpipe-l1-1-0.dll@cb59f1fe73c17446eb196fc0dd7d944a0cd9d81f...
+13> Downloading src/third_party/apache-win32\bin\api-ms-win-core-memory-l1-1-0.dll@9c03356cf48112563bb845479f40bf27b293e95e...
+6> Downloading src/third_party/apache-win32\bin\api-ms-win-core-file-l1-2-0.dll@04669214375b25e2dc8a3635484e6eeb206bc4eb...
+4> Downloading src/third_party/apache-win32\bin\api-ms-win-core-errorhandling-l1-1-0.dll@51cbb7ba47802dc630c2507750432c55f5979c27...
+15> Downloading src/third_party/apache-win32\bin\api-ms-win-core-processenvironment-l1-1-0.dll@2745259f4dbbefbf6b570ee36d224abdb18719bc...
+2> Downloading src/third_party/apache-win32\bin\api-ms-win-core-datetime-l1-1-0.dll@4940d5b92b6b80a40371f8df073bf3eb406f5658...
+11> Downloading src/third_party/apache-win32\bin\api-ms-win-core-libraryloader-l1-1-0.dll@47143a66b4a2e2ba019bf1fd07bcca9cfb8bb117...
+9> Downloading src/third_party/apache-win32\bin\api-ms-win-core-heap-l1-1-0.dll@b4310929ccb82dd3c3a779cab68f1f9f368076f2...
+12> Downloading src/third_party/apache-win32\bin\api-ms-win-core-localization-l1-2-0.dll@9874398548891f6a08fc06437996f84eb7495783...
+10> Downloading src/third_party/apache-win32\bin\api-ms-win-core-interlocked-l1-1-0.dll@f779cdef9ded19402aa72958085213d6671ca572...
+3> Downloading src/third_party/apache-win32\bin\api-ms-win-core-debug-l1-1-0.dll@e7c8a6c29c3158f8b332eea5c33c3b1e044b5f73...
+1> Downloading src/third_party/apache-win32\bin\api-ms-win-core-console-l1-1-0.dll@724f4f91041ad595e365b724a0348c83acf12bbb...
+7> Downloading src/third_party/apache-win32\bin\api-ms-win-core-file-l2-1-0.dll@402b7b8f8dcfd321b1d12fc85a1ee5137a5569b2...
+0> Downloading src/third_party/apache-win32\bin\ApacheMonitor.exe@a09af35e49d42ecc0aa6ef43203a709f7732bdd5...
+5> Downloading src/third_party/apache-win32\bin\api-ms-win-core-file-l1-1-0.dll@9acbeef0ac510c179b319ca69cd5378d0e70504d...
+8> Downloading src/third_party/apache-win32\bin\api-ms-win-core-handle-l1-1-0.dll@a2e2a40cea25ea4fd64b8deaf4fbe4a2db94107a...
+15> Downloading src/third_party/apache-win32\bin\api-ms-win-core-string-l1-1-0.dll@637e4a9946691f76e6deb69bdc21c210921d6f07...
+12> Downloading src/third_party/apache-win32\bin\api-ms-win-core-synch-l1-1-0.dll@5584c189216a17228cca6cd07037aaa9a8603241...
+6> Downloading src/third_party/apache-win32\bin\api-ms-win-core-profile-l1-1-0.dll@e7e0b18a40a35bd8b0766ac72253de827432e148...
+13> Downloading src/third_party/apache-win32\bin\api-ms-win-core-synch-l1-2-0.dll@a9aebbbb73b7b846b051325d7572f2398f5986ee...
+4> Downloading src/third_party/apache-win32\bin\api-ms-win-core-processthreads-l1-1-1.dll@0bffb9ed366853e7019452644d26e8e8f236241b...
+11> Downloading src/third_party/apache-win32\bin\api-ms-win-core-util-l1-1-0.dll@1e1a5ab47e4c2b3c32c81690b94954b7612bb493...
+10> Downloading src/third_party/apache-win32\bin\api-ms-win-core-rtlsupport-l1-1-0.dll@24f37d46dfc0ef303ef04abf9956241af55d25c9...
+0> Downloading src/third_party/apache-win32\bin\api-ms-win-core-sysinfo-l1-1-0.dll@f20ae25484a1c1b43748a1f0c422f48f092ad2c1...
+5> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-environment-l1-1-0.dll@9a4818897251cacb7fe1c6fe1be3e854985186ad...
+2> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-heap-l1-1-0.dll@60b4cf246c5f414fc1cd12f506c41a1043d473ee...
+9> Downloading src/third_party/apache-win32\bin\api-ms-win-core-timezone-l1-1-0.dll@4bf13db65943e708690d6256d7ddd421cc1cc72b...
+3> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-conio-l1-1-0.dll@49002b58cb0df2ee8d868dec335133cf225657df...
+1> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-convert-l1-1-0.dll@c84e41fdcc4ca89a76ae683cb390a9b86500d3ca...
+7> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-filesystem-l1-1-0.dll@78fa03c89ea12ff93fa499c38673039cc2d55d40...
+14> Downloading src/third_party/apache-win32\bin\api-ms-win-core-processthreads-l1-1-0.dll@50699041060d14576ed7bacbd44be9af80eb902a...
+8> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-locale-l1-1-0.dll@9c1df49a8dbdc8496ac6057f886f5c17b2c39e3e...
+12> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-math-l1-1-0.dll@8b35ec4676bd96c2c4508dc5f98ca471b22deed7...
+13> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-private-l1-1-0.dll@0c33cfe40edd278a692c2e73e941184fd24286d9...
+11> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-runtime-l1-1-0.dll@a19acefa3f95d1b565650fdbc40ef98c793358e9...
+6> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-multibyte-l1-1-0.dll@91eef52c557aefd0fde27e8df4e3c3b7f99862f2...
+15> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-process-l1-1-0.dll@ec96f7beeaec14d3b6c437b97b4a18a365534b9b...
+4> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-stdio-l1-1-0.dll@982b5da1c1f5b9d74af6243885bcba605d54df8c...
+9> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-string-l1-1-0.dll@7f389e6f2d6e5beb2a3baf622a0c0ea24bc4de60...
+1> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-time-l1-1-0.dll@ee815a158baacb357d9e074c0755b6f6c286b625...
+14> Downloading src/third_party/apache-win32\bin\httpd.exe@db1e5983c9b91253eb253bfd6c3f498bc0d86230...
+0> Downloading src/third_party/apache-win32\bin\api-ms-win-crt-utility-l1-1-0.dll@eaa07829d012206ac55fb1af5cc6a35f341d22be...
+5> Downloading src/third_party/apache-win32\bin\libapr-1.dll@d7083018a6f19148ffedc3d09416282bc69babd6...
+10> Downloading src/third_party/apache-win32\bin\libaprutil-1.dll@ad35bc0f054af6a4e02f2e9a55c9213def6cb2cf...
+3> Downloading src/third_party/apache-win32\bin\libapriconv-1.dll@18998f83f0115d6ebd67be781ec7b94e2fe67550...
+2> Downloading src/third_party/apache-win32\bin\libcrypto-1_1-x64.dll@3b42f0b6560d1eff56e3a00756366bf260f1d608...
+7> Downloading src/third_party/apache-win32\bin\libhttpd.dll@4ea4b5bfa0e3301fd326f9970efacfff028c5144...
+8> Downloading src/third_party/apache-win32\bin\libssl-1_1-x64.dll@a771c64188a388109c0f88a0b72593ca63b734fa...
+13> Downloading src/third_party/apache-win32\bin\openssl.exe@2dba80e3402fb7bbeb5889eef2fd9815260bc4f8...
+11> Downloading src/third_party/apache-win32\bin\pcre.dll@35481488fbc34b113885466ab3e34b6615648045...
+15> Downloading src/third_party/apache-win32\bin\php7ts.dll@82a55130eaa2138b7e1f8ddf609552ac2f679fc9...
+6> Downloading src/third_party/apache-win32\bin\ucrtbase.dll@4189f4459c54e69c6d3155a82524bda7549a75a6...
+12> Downloading src/third_party/apache-win32\bin\vcruntime140.dll@aaccc47a71fbcadf980932874056c9570a824890...
+4> Downloading src/third_party/apache-win32\bin\zlib1.dll@bae633d523b5905725d50d59297d9c26997802f5...
+9> Downloading src/third_party/apache-win32\modules\mod_access_compat.so@15cb4ef42fe094ab865859900be14421741b4e74...
+0> Downloading src/third_party/apache-win32\modules\mod_alias.so@a1ce8466c07eda65049e96360af7d6052363fabe...
+10> Downloading src/third_party/apache-win32\modules\mod_authz_host.so@b6db200f1e4d8921f5ea13867902926b37de99a0...
+3> Downloading src/third_party/apache-win32\modules\mod_authz_core.so@c549d87dbb75923d9df934bef591438fd629ffe1...
+14> Downloading src/third_party/apache-win32\modules\mod_asis.so@c66f70fa6dd25400787ec7816a55743bbb2cae90...
+5> Downloading src/third_party/apache-win32\modules\mod_autoindex.so@f4ff8a89d66963f79c0dc42ed4002080f7c5b49f...
+1> Downloading src/third_party/apache-win32\modules\mod_authn_core.so@cbc0f27732a85e19057d2eaa99c787348fae637c...
+2> Downloading src/third_party/apache-win32\modules\mod_cgi.so@9fe78b0bc590613933f10ed037216449a9854080...
+7> Downloading src/third_party/apache-win32\modules\mod_env.so@632c51d3ebb008eb072362eab76d0c435f385882...
+8> Downloading src/third_party/apache-win32\modules\mod_headers.so@fb6530a211bfa3859dbcc3330febf2eed5a5d579...
+13> Downloading src/third_party/apache-win32\modules\mod_log_config.so@a7ceec0a4432a1b353d7d27191064596eab01414...
+11> Downloading src/third_party/apache-win32\modules\mod_mime.so@27a07dd6f2cc214a22bf6beedbcb4624aa594623...
+12> Downloading src/third_party/apache-win32\modules\mod_rewrite.so@83c43f08fc010f43345843818666c82254d79cd2...
+0> Downloading src/third_party/apache-win32\modules\php7apache2_4.dll@454aedd338235a5618c34401077e639dde69dbef...
+4> Downloading src/third_party/apache-win32\modules\mod_ssl.so@03e42dcbd0064b2e3be7952df01849a870464db3...
+Downloading 69 files took 80.736000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --directory --recursive --no_auth --num_threads=16 --bucket chromium-apache-win32 src/third_party/apache-win32' took 84.56 secs
+Running hooks:  38% (37/97) wasm_fuzzer
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth -u --bucket v8-wasm-fuzzer -s src/v8/test/fuzzer/wasm_corpus.tar.gz.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/v8/test/fuzzer/wasm_corpus.tar.gz@a1493bb387aed38462c49f4351dc47e79e4b784b...
+0> Extracting 47197 entries from src/v8/test/fuzzer/wasm_corpus.tar.gz to src/v8/test/fuzzer/wasm_corpus
+Downloading 1 files took 28.782000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth -u --bucket v8-wasm-fuzzer -s src/v8/test/fuzzer/wasm_corpus.tar.gz.sha1' took 29.51 secs
+Running hooks:  41% (40/97) node_win
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-nodejs/14.15.4 -s src/third_party/node/win/node.exe.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/third_party/node/win/node.exe@58bca4fea5196d856e41f928c02f6d6af2421865...
+Downloading 1 files took 21.757000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-nodejs/14.15.4 -s src/third_party/node/win/node.exe.sha1' took 22.44 secs
+Running hooks:  42% (41/97) webui_node_modules
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --extract --no_auth --bucket chromium-nodejs -s src/third_party/node/node_modules.tar.gz.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/third_party/node/node_modules.tar.gz@f44430862b93f5fa7edc6a27e175c4defa0140bc...
+0> Extracting 9837 entries from src/third_party/node/node_modules.tar.gz to src/third_party/node/node_modules
+Downloading 1 files took 21.772000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --extract --no_auth --bucket chromium-nodejs -s src/third_party/node/node_modules.tar.gz.sha1' took 22.44 secs
+Running hooks:  49% (48/97) tools_traffic_annotation_windows
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --num_threads=4 --bucket chromium-tools-traffic_annotation -d src/tools/traffic_annotation/bin/win32' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/tools/traffic_annotation/bin/win32\traffic_annotation_auditor.exe@78398902112510645b07a808000221ecaf69a409...
+Downloading 1 files took 12.843000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --num_threads=4 --bucket chromium-tools-traffic_annotation -d src/tools/traffic_annotation/bin/win32' took 13.51 secs
+Running hooks:  50% (49/97) zucchini_testdata
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --num_threads=4 --bucket chromium-binary-patching/zucchini_testdata --recursive -d src/components/zucchini' in 'F:\Projects\37_chromium\chromium'
+2> Downloading src/components/zucchini\fuzzers\testdata\old_eventlog_provider.dll@c80fdce994ba043956e192f650d894555460ff9b...
+1> Downloading src/components/zucchini\fuzzers\testdata\new_eventlog_provider.dll@89ce67035d2d2dae33cb2d98d4762e955b93df95...
+3> Downloading src/components/zucchini\testdata\chrome64_2.exe@c3a974589d50956a3c8c17572fee078b9276ad9b...
+0> Downloading src/components/zucchini\testdata\chrome64_1.exe@4970ef6f342f6a0da9ae7a4ed462f93ef68f142c...
+2> Downloading src/components/zucchini\testdata\setup1.exe@5d0e8fed8e9e091e184adb2e2e0e668def9cd2c5...
+1> Downloading src/components/zucchini\testdata\setup2.exe@12194273e8d509b6e81e4a6b63621081e1426028...
+Downloading 6 files took 16.942000 second(s)
+Hook 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --num_threads=4 --bucket chromium-binary-patching/zucchini_testdata --recursive -d src/components/zucchini' took 19.87 secs
+Running hooks:  61% (60/97) subresource-filter-ruleset
+________ running 'vpython.bat src/third_party/depot_tools/download_from_google_storage.py --no_resume --no_auth --bucket chromium-ads-detection -s src/third_party/subresource-filter-ruleset/data/UnindexedRules.sha1' in 'F:\Projects\37_chromium\chromium'
+0> Downloading src/third_party/subresource-filter-ruleset/data/UnindexedRules@83bced6c2676ed8d7c57a84c9a8d4f76c08f79e2...
+Downloading 1 files took 7.300000 second(s)
+Running hooks: 100% (97/97), done.
+Running: git submodule foreach 'git config -f $toplevel/.git/config submodule.$name.ignore all'
+Running: git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
+Running: git config diff.ignoreSubmodules all
+PS F:\Projects\37_chromium\chromium> cd src
+PS F:\Projects\37_chromium\chromium\src> gn gen out/Default
+Done. Made 17189 targets from 2712 files in 74709ms
+PS F:\Projects\37_chromium\chromium\src>
+PS F:\Projects\37_chromium\chromium\src> autoninja -C out\Default chrome
+"F:\Projects\37_chromium\depot_tools\ninja.exe" -C out\Default chrome -j 10
+ninja: Entering directory `out\Default'
+[50948/50948] STAMP obj/chrome/chrome.stamp
