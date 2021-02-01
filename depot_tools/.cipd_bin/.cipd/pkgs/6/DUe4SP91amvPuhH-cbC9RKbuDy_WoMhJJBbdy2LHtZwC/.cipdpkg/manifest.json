@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/rdb/windows-amd64",
+  "version_file": ".versions/rdb.exe.cipd_version",
+  "install_mode": "copy",
+  "files": [
+    {
+      "name": "rdb.exe",
+      "size": 30299136,
+      "hash": "sHxt4hauB0n6HaSnQYRcZlNXDmWFrCbR02mj-Nl47OUC"
+    },
+    {
+      "name": ".versions/rdb.exe.cipd_version",
+      "size": 118,
+      "hash": "P2fhm4tEAoXj1zyn4At5iw0PLgcBXfAoEKsQpHMrH_UC"
+    }
+  ]
+}

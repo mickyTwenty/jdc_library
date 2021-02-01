@@ -1,0 +1,18 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/bb/windows-amd64",
+  "version_file": ".versions/bb.exe.cipd_version",
+  "install_mode": "copy",
+  "files": [
+    {
+      "name": "bb.exe",
+      "size": 21033472,
+      "hash": "etIrDue7XcX4j5J0Hsr2ud4VvGpH03O26uQ5bncRoyIC"
+    },
+    {
+      "name": ".versions/bb.exe.cipd_version",
+      "size": 117,
+      "hash": "BBE4o5Ls54RqvYUvBunRj6xzHie-pBpYjCys55DfviAC"
+    }
+  ]
+}

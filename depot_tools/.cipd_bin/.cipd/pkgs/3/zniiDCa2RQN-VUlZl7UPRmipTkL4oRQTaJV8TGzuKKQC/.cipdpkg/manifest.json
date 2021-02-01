@@ -1,0 +1,17 @@
+{
+  "format_version": "1.1",
+  "package_name": "infra/tools/prpc/windows-amd64",
+  "version_file": ".versions/prpc.exe.cipd_version",
+  "files": [
+    {
+      "name": "prpc.exe",
+      "size": 16475136,
+      "hash": "sbyBwxSkyQIcs4dwrJAw8r7Icm0jNE-QAzg0zXZd_q0C"
+    },
+    {
+      "name": ".versions/prpc.exe.cipd_version",
+      "size": 119,
+      "hash": "C_5emorKUK3-3eSiIH8O1uK7wQa1IrQUH4xuEzudkNUC"
+    }
+  ]
+}
