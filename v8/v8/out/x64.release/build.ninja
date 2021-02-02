@@ -1,0 +1,543 @@
+ninja_required_version = 1.7.2
+
+rule gn
+  command = ../../buildtools/win/gn.exe --root=../.. -q --regeneration gen .
+  pool = console
+  description = Regenerating ninja files
+
+build build.ninja: gn
+  generator = 1
+  depfile = build.ninja.d
+
+pool build_toolchain_action_pool
+  depth = 8
+
+pool build_toolchain_link_pool
+  depth = 2
+
+subninja toolchain.ninja
+
+build asm_to_inline_asm_default: phony obj/asm_to_inline_asm_default.stamp
+build bytecode_builtins_list_generator: phony ./bytecode_builtins_list_generator.exe
+build cppgc: phony obj/cppgc.stamp
+build cppgc_base: phony obj/cppgc_base.stamp
+build cppgc_headers: phony obj/cppgc_headers.stamp
+build cppgc_sample: phony ./cppgc_sample.exe
+build d8: phony ./d8.exe
+build fuzzer_support: phony obj/fuzzer_support.stamp
+build gen-regexp-special-case: phony ./gen-regexp-special-case.exe
+build gen_v8_gn: phony obj/gen_v8_gn.stamp
+build generate_bytecode_builtins_list: phony obj/generate_bytecode_builtins_list.stamp
+build gn_all: phony obj/gn_all.stamp
+build inspector_fuzzer: phony obj/inspector_fuzzer.stamp
+build json_fuzzer: phony obj/json_fuzzer.stamp
+build lib_wasm_fuzzer_common: phony obj/lib_wasm_fuzzer_common.stamp
+build mksnapshot: phony ./mksnapshot.exe
+build multi_return_fuzzer: phony obj/multi_return_fuzzer.stamp
+build parser_fuzzer: phony obj/parser_fuzzer.stamp
+build postmortem-metadata: phony obj/postmortem-metadata.stamp
+build regexp_builtins_fuzzer: phony obj/regexp_builtins_fuzzer.stamp
+build regexp_fuzzer: phony obj/regexp_fuzzer.stamp
+build run_gen-regexp-special-case: phony obj/run_gen-regexp-special-case.stamp
+build run_mksnapshot_default: phony obj/run_mksnapshot_default.stamp
+build run_torque: phony obj/run_torque.stamp
+build torque: phony ./torque.exe
+build torque-language-server: phony ./torque-language-server.exe
+build torque_base: phony obj/torque_base.stamp
+build torque_generated_definitions: phony obj/torque_generated_definitions.stamp
+build torque_generated_initializers: phony obj/torque_generated_initializers.stamp
+build torque_ls_base: phony obj/torque_ls_base.stamp
+build v8: phony obj/v8.stamp
+build v8_archive: phony obj/v8_archive.stamp
+build v8_base: phony obj/v8_base.stamp
+build v8_base_without_compiler: phony obj/v8_base_without_compiler.stamp
+build v8_clusterfuzz: phony obj/v8_clusterfuzz.stamp
+build v8_compiler: phony obj/v8_compiler.stamp
+build v8_compiler_for_mksnapshot: phony obj/v8_compiler_for_mksnapshot.stamp
+build v8_compiler_opt: phony obj/v8_compiler_opt.stamp
+build v8_config_headers: phony obj/v8_config_headers.stamp
+build v8_cppgc_shared: phony obj/v8_cppgc_shared.stamp
+build v8_cppgc_shared_for_testing: phony obj/v8_cppgc_shared_for_testing.stamp
+build v8_dump_build_config: phony obj/v8_dump_build_config.stamp
+build v8_for_testing: phony obj/v8_for_testing.stamp
+build v8_fuzzers: phony obj/v8_fuzzers.stamp
+build v8_generated_cc_files: phony obj/v8_generated_cc_files.stamp
+build v8_headers: phony obj/v8_headers.stamp
+build v8_hello_world: phony ./v8_hello_world.exe
+build v8_init: phony obj/v8_init.stamp
+build v8_initializers: phony obj/v8_initializers.stamp
+build v8_libbase: phony obj/v8_libbase.lib
+build v8_libplatform: phony obj/v8_libplatform.lib
+build v8_libsampler: phony obj/v8_libsampler.stamp
+build v8_maybe_icu: phony obj/v8_maybe_icu.stamp
+build v8_python_base: phony obj/v8_python_base.stamp
+build v8_sample_process: phony ./v8_sample_process.exe
+build v8_shared_internal_headers: phony obj/v8_shared_internal_headers.stamp
+build v8_shell: phony ./v8_shell.exe
+build v8_simple_inspector_fuzzer: phony ./v8_simple_inspector_fuzzer.exe
+build v8_simple_json_fuzzer: phony ./v8_simple_json_fuzzer.exe
+build v8_simple_multi_return_fuzzer: phony ./v8_simple_multi_return_fuzzer.exe
+build v8_simple_parser_fuzzer: phony ./v8_simple_parser_fuzzer.exe
+build v8_simple_regexp_builtins_fuzzer: phony ./v8_simple_regexp_builtins_fuzzer.exe
+build v8_simple_regexp_fuzzer: phony ./v8_simple_regexp_fuzzer.exe
+build v8_simple_wasm_async_fuzzer: phony ./v8_simple_wasm_async_fuzzer.exe
+build v8_simple_wasm_code_fuzzer: phony ./v8_simple_wasm_code_fuzzer.exe
+build v8_simple_wasm_compile_fuzzer: phony ./v8_simple_wasm_compile_fuzzer.exe
+build v8_simple_wasm_fuzzer: phony ./v8_simple_wasm_fuzzer.exe
+build v8_snapshot: phony obj/v8_snapshot.stamp
+build v8_tracing: phony obj/v8_tracing.stamp
+build v8_version: phony obj/v8_version.stamp
+build v8_wrappers: phony obj/v8_wrappers.stamp
+build wasm_async_fuzzer: phony obj/wasm_async_fuzzer.stamp
+build wasm_code_fuzzer: phony obj/wasm_code_fuzzer.stamp
+build wasm_compile_fuzzer: phony obj/wasm_compile_fuzzer.stamp
+build wasm_fuzzer: phony obj/wasm_fuzzer.stamp
+build wasm_test_common: phony obj/wasm_test_common.stamp
+build wee8: phony obj/wee8.lib
+build cctest: phony ./cctest.exe
+build generate-bytecode-expectations: phony ./generate-bytecode-expectations.exe
+build inspector-test: phony ./inspector-test.exe
+build mkgrokdump: phony ./mkgrokdump.exe
+build unittests: phony ./unittests.exe
+build v8_cppgc_shared_unittests: phony ./v8_cppgc_shared_unittests.exe
+build wasm_api_tests: phony ./wasm_api_tests.exe
+build zlib_bench: phony ./zlib_bench.exe
+build branding_buildflags: phony obj/build/branding_buildflags.stamp
+build buildflag_header_h: phony obj/build/buildflag_header_h.stamp
+build cctest_headers: phony obj/test/cctest/cctest_headers.stamp
+build cctest_sources: phony obj/test/cctest/cctest_sources.stamp
+build chromecast_buildflags: phony obj/build/chromecast_buildflags.stamp
+build chromeos_buildflags: phony obj/build/chromeos_buildflags.stamp
+build common_deps: phony obj/build/config/common_deps.stamp
+build common_test_headers: phony obj/test/common_test_headers.stamp
+build compiler_buildflags: phony obj/build/config/compiler/compiler_buildflags.stamp
+build compression_utils_portable: phony obj/third_party/zlib/google/compression_utils_portable.lib
+build copy_cdb_to_output: phony obj/build/win/copy_cdb_to_output.stamp
+build copy_prereqs: phony obj/tools/v8windbg/copy_prereqs.stamp
+build cppgc_unittests_sources: phony obj/test/unittests/cppgc_unittests_sources.stamp
+build crdtp: phony obj/third_party/inspector_protocol/crdtp.stamp
+build crdtp_platform: phony obj/third_party/inspector_protocol/crdtp_platform.stamp
+build crdtp_test: phony obj/third_party/inspector_protocol/crdtp_test.stamp
+build crdtp_test_platform: phony obj/third_party/inspector_protocol/crdtp_test_platform.stamp
+build default_exe_manifest: phony obj/build/win/default_exe_manifest.stamp
+build deps: phony obj/build/config/sanitizers/deps.stamp
+build executable_deps: phony obj/build/config/executable_deps.stamp
+build extra_icudata: phony obj/third_party/icu/extra_icudata.stamp
+build gen_heap_constants: phony obj/tools/debug_helper/gen_heap_constants.stamp
+build icu: phony obj/third_party/icu/icu.stamp
+build icudata: phony obj/third_party/icu/icudata.stamp
+build icui18n: phony obj/third_party/icu/icui18n.lib
+build icui18n_hidden_visibility: phony obj/third_party/icu/icui18n_hidden_visibility.lib
+build icuuc: phony obj/third_party/icu/icuuc.lib
+build icuuc_hidden_visibility: phony obj/third_party/icu/icuuc_hidden_visibility.lib
+build inspector: phony obj/src/inspector/inspector.stamp
+build inspector_string_conversions: phony obj/src/inspector/inspector_string_conversions.stamp
+build inspector_test: phony obj/test/inspector/inspector_test.stamp
+build inspector_test_headers: phony obj/src/inspector/inspector_test_headers.stamp
+build libc++: phony obj/buildtools/third_party/libc++/libc++.stamp
+build llvm-symbolizer_data: phony obj/build/config/clang/llvm-symbolizer_data.stamp
+build loadable_module_deps: phony obj/build/config/loadable_module_deps.stamp
+build minizip: phony obj/third_party/zlib/minizip.lib
+build options_sources: phony obj/build/config/sanitizers/options_sources.lib
+build protocol_compatibility: phony obj/src/inspector/protocol_compatibility.stamp
+build protocol_generated_sources: phony obj/src/inspector/protocol_generated_sources.stamp
+build run_mkgrokdump: phony obj/tools/debug_helper/run_mkgrokdump.stamp
+build runtime_libs: phony obj/build/win/runtime_libs.stamp
+build shared_library_deps: phony obj/build/config/shared_library_deps.stamp
+build unittests_sources: phony obj/test/unittests/unittests_sources.stamp
+build v8_android_test_runner_deps: phony obj/tools/v8_android_test_runner_deps.stamp
+build v8_benchmarks: phony obj/test/benchmarks/v8_benchmarks.stamp
+build v8_bot_default: phony obj/test/v8_bot_default.stamp
+build v8_check_static_initializers: phony obj/tools/v8_check_static_initializers.stamp
+build v8_cppgc_shared_unittests_sources: phony obj/test/unittests/v8_cppgc_shared_unittests_sources.stamp
+build v8_d8_default: phony obj/test/v8_d8_default.stamp
+build v8_debug_helper: phony obj/tools/debug_helper/v8_debug_helper.lib
+build v8_debugger: phony obj/test/debugger/v8_debugger.stamp
+build v8_default: phony obj/test/v8_default.stamp
+build v8_fuzzer: phony obj/test/fuzzer/v8_fuzzer.stamp
+build v8_intl: phony obj/test/intl/v8_intl.stamp
+build v8_jsfunfuzz: phony obj/tools/jsfunfuzz/v8_jsfunfuzz.stamp
+build v8_message: phony obj/test/message/v8_message.stamp
+build v8_mjsunit: phony obj/test/mjsunit/v8_mjsunit.stamp
+build v8_mozilla: phony obj/test/mozilla/v8_mozilla.stamp
+build v8_optimize_for_size: phony obj/test/v8_optimize_for_size.stamp
+build v8_perf: phony obj/test/v8_perf.stamp
+build v8_run_gcmole: phony obj/tools/gcmole/v8_run_gcmole.stamp
+build v8_run_num_fuzzer: phony obj/test/v8_run_num_fuzzer.stamp
+build v8_test262: phony obj/test/test262/v8_test262.stamp
+build v8_testrunner: phony obj/tools/v8_testrunner.stamp
+build v8_wasm_js: phony obj/test/wasm-js/v8_wasm_js.stamp
+build v8_wasm_spec_tests: phony obj/test/wasm-spec-tests/v8_wasm_spec_tests.stamp
+build v8_webkit: phony obj/test/webkit/v8_webkit.stamp
+build v8windbg: phony ./v8windbg.dll.lib
+build v8windbg_base: phony obj/tools/v8windbg/v8windbg_base.stamp
+build v8windbg_test: phony obj/tools/v8windbg/v8windbg_test.stamp
+build v8windbg_test_script: phony obj/tools/v8windbg/v8windbg_test_script.stamp
+build zlib: phony obj/third_party/zlib/zlib.lib
+build zlib_adler32_simd: phony obj/third_party/zlib/zlib_adler32_simd.stamp
+build zlib_common_headers: phony obj/third_party/zlib/zlib_common_headers.stamp
+build zlib_crc32_simd: phony obj/third_party/zlib/zlib_crc32_simd.stamp
+build zlib_inflate_chunk_simd: phony obj/third_party/zlib/zlib_inflate_chunk_simd.stamp
+build zlib_x86_simd: phony obj/third_party/zlib/zlib_x86_simd.stamp
+build $:asm_to_inline_asm_default: phony obj/asm_to_inline_asm_default.stamp
+build $:bytecode_builtins_list_generator: phony ./bytecode_builtins_list_generator.exe
+build $:cppgc: phony obj/cppgc.stamp
+build $:cppgc_base: phony obj/cppgc_base.stamp
+build $:cppgc_headers: phony obj/cppgc_headers.stamp
+build $:cppgc_sample: phony ./cppgc_sample.exe
+build $:d8: phony ./d8.exe
+build $:fuzzer_support: phony obj/fuzzer_support.stamp
+build $:gen-regexp-special-case: phony ./gen-regexp-special-case.exe
+build $:gen_v8_gn: phony obj/gen_v8_gn.stamp
+build $:generate_bytecode_builtins_list: phony obj/generate_bytecode_builtins_list.stamp
+build $:gn_all: phony obj/gn_all.stamp
+build $:inspector_fuzzer: phony obj/inspector_fuzzer.stamp
+build $:json_fuzzer: phony obj/json_fuzzer.stamp
+build $:lib_wasm_fuzzer_common: phony obj/lib_wasm_fuzzer_common.stamp
+build $:mksnapshot: phony ./mksnapshot.exe
+build $:multi_return_fuzzer: phony obj/multi_return_fuzzer.stamp
+build $:parser_fuzzer: phony obj/parser_fuzzer.stamp
+build $:postmortem-metadata: phony obj/postmortem-metadata.stamp
+build $:regexp_builtins_fuzzer: phony obj/regexp_builtins_fuzzer.stamp
+build $:regexp_fuzzer: phony obj/regexp_fuzzer.stamp
+build $:run_gen-regexp-special-case: phony obj/run_gen-regexp-special-case.stamp
+build $:run_mksnapshot_default: phony obj/run_mksnapshot_default.stamp
+build $:run_torque: phony obj/run_torque.stamp
+build $:torque: phony ./torque.exe
+build $:torque-language-server: phony ./torque-language-server.exe
+build $:torque_base: phony obj/torque_base.stamp
+build $:torque_generated_definitions: phony obj/torque_generated_definitions.stamp
+build $:torque_generated_initializers: phony obj/torque_generated_initializers.stamp
+build $:torque_ls_base: phony obj/torque_ls_base.stamp
+build $:v8: phony obj/v8.stamp
+build $:v8_archive: phony obj/v8_archive.stamp
+build $:v8_base: phony obj/v8_base.stamp
+build $:v8_base_without_compiler: phony obj/v8_base_without_compiler.stamp
+build $:v8_clusterfuzz: phony obj/v8_clusterfuzz.stamp
+build $:v8_compiler: phony obj/v8_compiler.stamp
+build $:v8_compiler_for_mksnapshot: phony obj/v8_compiler_for_mksnapshot.stamp
+build $:v8_compiler_opt: phony obj/v8_compiler_opt.stamp
+build $:v8_config_headers: phony obj/v8_config_headers.stamp
+build $:v8_cppgc_shared: phony obj/v8_cppgc_shared.stamp
+build $:v8_cppgc_shared_for_testing: phony obj/v8_cppgc_shared_for_testing.stamp
+build $:v8_dump_build_config: phony obj/v8_dump_build_config.stamp
+build $:v8_for_testing: phony obj/v8_for_testing.stamp
+build $:v8_fuzzers: phony obj/v8_fuzzers.stamp
+build $:v8_generated_cc_files: phony obj/v8_generated_cc_files.stamp
+build $:v8_headers: phony obj/v8_headers.stamp
+build $:v8_hello_world: phony ./v8_hello_world.exe
+build $:v8_init: phony obj/v8_init.stamp
+build $:v8_initializers: phony obj/v8_initializers.stamp
+build $:v8_libbase: phony obj/v8_libbase.lib
+build $:v8_libplatform: phony obj/v8_libplatform.lib
+build $:v8_libsampler: phony obj/v8_libsampler.stamp
+build $:v8_maybe_icu: phony obj/v8_maybe_icu.stamp
+build $:v8_python_base: phony obj/v8_python_base.stamp
+build $:v8_sample_process: phony ./v8_sample_process.exe
+build $:v8_shared_internal_headers: phony obj/v8_shared_internal_headers.stamp
+build $:v8_shell: phony ./v8_shell.exe
+build $:v8_simple_inspector_fuzzer: phony ./v8_simple_inspector_fuzzer.exe
+build $:v8_simple_json_fuzzer: phony ./v8_simple_json_fuzzer.exe
+build $:v8_simple_multi_return_fuzzer: phony ./v8_simple_multi_return_fuzzer.exe
+build $:v8_simple_parser_fuzzer: phony ./v8_simple_parser_fuzzer.exe
+build $:v8_simple_regexp_builtins_fuzzer: phony ./v8_simple_regexp_builtins_fuzzer.exe
+build $:v8_simple_regexp_fuzzer: phony ./v8_simple_regexp_fuzzer.exe
+build $:v8_simple_wasm_async_fuzzer: phony ./v8_simple_wasm_async_fuzzer.exe
+build $:v8_simple_wasm_code_fuzzer: phony ./v8_simple_wasm_code_fuzzer.exe
+build $:v8_simple_wasm_compile_fuzzer: phony ./v8_simple_wasm_compile_fuzzer.exe
+build $:v8_simple_wasm_fuzzer: phony ./v8_simple_wasm_fuzzer.exe
+build $:v8_snapshot: phony obj/v8_snapshot.stamp
+build $:v8_tracing: phony obj/v8_tracing.stamp
+build $:v8_version: phony obj/v8_version.stamp
+build $:v8_wrappers: phony obj/v8_wrappers.stamp
+build $:wasm_async_fuzzer: phony obj/wasm_async_fuzzer.stamp
+build $:wasm_code_fuzzer: phony obj/wasm_code_fuzzer.stamp
+build $:wasm_compile_fuzzer: phony obj/wasm_compile_fuzzer.stamp
+build $:wasm_fuzzer: phony obj/wasm_fuzzer.stamp
+build $:wasm_test_common: phony obj/wasm_test_common.stamp
+build $:wee8: phony obj/wee8.lib
+build build$:branding_buildflags: phony obj/build/branding_buildflags.stamp
+build build$:buildflag_header_h: phony obj/build/buildflag_header_h.stamp
+build build$:chromecast_buildflags: phony obj/build/chromecast_buildflags.stamp
+build build$:chromeos_buildflags: phony obj/build/chromeos_buildflags.stamp
+build build/config$:common_deps: phony obj/build/config/common_deps.stamp
+build build/config$:executable_deps: phony obj/build/config/executable_deps.stamp
+build build/config$:loadable_module_deps: phony obj/build/config/loadable_module_deps.stamp
+build build/config$:shared_library_deps: phony obj/build/config/shared_library_deps.stamp
+build build/config/clang$:llvm-symbolizer_data: phony obj/build/config/clang/llvm-symbolizer_data.stamp
+build build/config/compiler$:compiler_buildflags: phony obj/build/config/compiler/compiler_buildflags.stamp
+build build/config/sanitizers$:deps: phony obj/build/config/sanitizers/deps.stamp
+build build/config/sanitizers$:options_sources: phony obj/build/config/sanitizers/options_sources.lib
+build build/win$:copy_cdb_to_output: phony obj/build/win/copy_cdb_to_output.stamp
+build build/win$:default_exe_manifest: phony obj/build/win/default_exe_manifest.stamp
+build build/win$:runtime_libs: phony obj/build/win/runtime_libs.stamp
+build buildtools/third_party/libc++$:libc++: phony obj/buildtools/third_party/libc++/libc++.stamp
+build buildtools/third_party/libc++: phony obj/buildtools/third_party/libc++/libc++.stamp
+build src/inspector$:inspector: phony obj/src/inspector/inspector.stamp
+build src/inspector: phony obj/src/inspector/inspector.stamp
+build src/inspector$:inspector_string_conversions: phony obj/src/inspector/inspector_string_conversions.stamp
+build src/inspector$:inspector_test_headers: phony obj/src/inspector/inspector_test_headers.stamp
+build src/inspector$:protocol_compatibility: phony obj/src/inspector/protocol_compatibility.stamp
+build src/inspector$:protocol_generated_sources: phony obj/src/inspector/protocol_generated_sources.stamp
+build src/inspector$:v8_generated_cc_files: phony obj/src/inspector/v8_generated_cc_files.stamp
+build test$:common_test_headers: phony obj/test/common_test_headers.stamp
+build test$:gn_all: phony obj/test/gn_all.stamp
+build test$:v8_bot_default: phony obj/test/v8_bot_default.stamp
+build test$:v8_d8_default: phony obj/test/v8_d8_default.stamp
+build test$:v8_default: phony obj/test/v8_default.stamp
+build test$:v8_optimize_for_size: phony obj/test/v8_optimize_for_size.stamp
+build test$:v8_perf: phony obj/test/v8_perf.stamp
+build test$:v8_run_num_fuzzer: phony obj/test/v8_run_num_fuzzer.stamp
+build test/benchmarks$:v8_benchmarks: phony obj/test/benchmarks/v8_benchmarks.stamp
+build test/benchmarks/cpp$:gn_all: phony obj/test/benchmarks/cpp/gn_all.stamp
+build test/cctest$:cctest: phony ./cctest.exe
+build test/cctest: phony ./cctest.exe
+build test/cctest$:cctest_headers: phony obj/test/cctest/cctest_headers.stamp
+build test/cctest$:cctest_sources: phony obj/test/cctest/cctest_sources.stamp
+build test/cctest$:generate-bytecode-expectations: phony ./generate-bytecode-expectations.exe
+build test/debugger$:v8_debugger: phony obj/test/debugger/v8_debugger.stamp
+build test/fuzzer$:v8_fuzzer: phony obj/test/fuzzer/v8_fuzzer.stamp
+build test/inspector$:inspector-test: phony ./inspector-test.exe
+build test/inspector$:inspector_test: phony obj/test/inspector/inspector_test.stamp
+build test/intl$:v8_intl: phony obj/test/intl/v8_intl.stamp
+build test/message$:v8_message: phony obj/test/message/v8_message.stamp
+build test/mjsunit$:v8_mjsunit: phony obj/test/mjsunit/v8_mjsunit.stamp
+build test/mkgrokdump$:mkgrokdump: phony ./mkgrokdump.exe
+build test/mkgrokdump: phony ./mkgrokdump.exe
+build test/mozilla$:v8_mozilla: phony obj/test/mozilla/v8_mozilla.stamp
+build test/test262$:v8_test262: phony obj/test/test262/v8_test262.stamp
+build test/unittests$:cppgc_unittests_sources: phony obj/test/unittests/cppgc_unittests_sources.stamp
+build test/unittests$:unittests: phony ./unittests.exe
+build test/unittests: phony ./unittests.exe
+build test/unittests$:unittests_sources: phony obj/test/unittests/unittests_sources.stamp
+build test/unittests$:v8_cppgc_shared_unittests: phony ./v8_cppgc_shared_unittests.exe
+build test/unittests$:v8_cppgc_shared_unittests_sources: phony obj/test/unittests/v8_cppgc_shared_unittests_sources.stamp
+build test/wasm-api-tests$:wasm_api_tests: phony ./wasm_api_tests.exe
+build test/wasm-js$:v8_wasm_js: phony obj/test/wasm-js/v8_wasm_js.stamp
+build test/wasm-spec-tests$:v8_wasm_spec_tests: phony obj/test/wasm-spec-tests/v8_wasm_spec_tests.stamp
+build test/webkit$:v8_webkit: phony obj/test/webkit/v8_webkit.stamp
+build testing/gmock$:gmock: phony obj/testing/gmock/gmock.stamp
+build testing/gmock: phony obj/testing/gmock/gmock.stamp
+build testing/gmock$:gmock_main: phony obj/testing/gmock/gmock_main.stamp
+build testing/gtest$:gtest: phony obj/testing/gtest/gtest.lib
+build testing/gtest: phony obj/testing/gtest/gtest.lib
+build testing/gtest$:gtest_main: phony obj/testing/gtest/gtest_main.stamp
+build third_party/googletest$:gmock: phony obj/third_party/googletest/gmock.stamp
+build third_party/googletest$:gmock_main: phony obj/third_party/googletest/gmock_main.lib
+build third_party/googletest$:gtest: phony obj/third_party/googletest/gtest.stamp
+build third_party/googletest$:gtest_main: phony obj/third_party/googletest/gtest_main.stamp
+build third_party/icu$:extra_icudata: phony obj/third_party/icu/extra_icudata.stamp
+build third_party/icu$:icu: phony obj/third_party/icu/icu.stamp
+build third_party/icu: phony obj/third_party/icu/icu.stamp
+build third_party/icu$:icudata: phony obj/third_party/icu/icudata.stamp
+build third_party/icu$:icui18n: phony obj/third_party/icu/icui18n.lib
+build third_party/icu$:icui18n_hidden_visibility: phony obj/third_party/icu/icui18n_hidden_visibility.lib
+build third_party/icu$:icuuc: phony obj/third_party/icu/icuuc.lib
+build third_party/icu$:icuuc_hidden_visibility: phony obj/third_party/icu/icuuc_hidden_visibility.lib
+build third_party/inspector_protocol$:crdtp: phony obj/third_party/inspector_protocol/crdtp.stamp
+build third_party/inspector_protocol$:crdtp_platform: phony obj/third_party/inspector_protocol/crdtp_platform.stamp
+build third_party/inspector_protocol$:crdtp_test: phony obj/third_party/inspector_protocol/crdtp_test.stamp
+build third_party/inspector_protocol$:crdtp_test_platform: phony obj/third_party/inspector_protocol/crdtp_test_platform.stamp
+build third_party/zlib$:minizip: phony obj/third_party/zlib/minizip.lib
+build third_party/zlib$:zlib: phony obj/third_party/zlib/zlib.lib
+build third_party/zlib: phony obj/third_party/zlib/zlib.lib
+build third_party/zlib$:zlib_adler32_simd: phony obj/third_party/zlib/zlib_adler32_simd.stamp
+build third_party/zlib$:zlib_bench: phony ./zlib_bench.exe
+build third_party/zlib$:zlib_common_headers: phony obj/third_party/zlib/zlib_common_headers.stamp
+build third_party/zlib$:zlib_crc32_simd: phony obj/third_party/zlib/zlib_crc32_simd.stamp
+build third_party/zlib$:zlib_inflate_chunk_simd: phony obj/third_party/zlib/zlib_inflate_chunk_simd.stamp
+build third_party/zlib$:zlib_x86_simd: phony obj/third_party/zlib/zlib_x86_simd.stamp
+build third_party/zlib/google$:compression_utils_portable: phony obj/third_party/zlib/google/compression_utils_portable.lib
+build tools$:gn_all: phony obj/tools/gn_all.stamp
+build tools$:v8_android_test_runner_deps: phony obj/tools/v8_android_test_runner_deps.stamp
+build tools$:v8_check_static_initializers: phony obj/tools/v8_check_static_initializers.stamp
+build tools$:v8_testrunner: phony obj/tools/v8_testrunner.stamp
+build tools/debug_helper$:gen_heap_constants: phony obj/tools/debug_helper/gen_heap_constants.stamp
+build tools/debug_helper$:run_mkgrokdump: phony obj/tools/debug_helper/run_mkgrokdump.stamp
+build tools/debug_helper$:v8_debug_helper: phony obj/tools/debug_helper/v8_debug_helper.lib
+build tools/gcmole$:v8_run_gcmole: phony obj/tools/gcmole/v8_run_gcmole.stamp
+build tools/jsfunfuzz$:v8_jsfunfuzz: phony obj/tools/jsfunfuzz/v8_jsfunfuzz.stamp
+build tools/v8windbg$:copy_prereqs: phony obj/tools/v8windbg/copy_prereqs.stamp
+build tools/v8windbg$:v8windbg: phony ./v8windbg.dll.lib
+build tools/v8windbg: phony ./v8windbg.dll.lib
+build tools/v8windbg$:v8windbg_base: phony obj/tools/v8windbg/v8windbg_base.stamp
+build tools/v8windbg$:v8windbg_test: phony obj/tools/v8windbg/v8windbg_test.stamp
+build tools/v8windbg$:v8windbg_test_script: phony obj/tools/v8windbg/v8windbg_test_script.stamp
+
+build all: phony $
+    obj/asm_to_inline_asm_default.stamp $
+    ./bytecode_builtins_list_generator.exe $
+    obj/cppgc.stamp $
+    obj/cppgc_base.stamp $
+    obj/cppgc_headers.stamp $
+    ./cppgc_sample.exe $
+    ./d8.exe $
+    obj/fuzzer_support.stamp $
+    ./gen-regexp-special-case.exe $
+    obj/gen_v8_gn.stamp $
+    obj/generate_bytecode_builtins_list.stamp $
+    obj/gn_all.stamp $
+    obj/inspector_fuzzer.stamp $
+    obj/json_fuzzer.stamp $
+    obj/lib_wasm_fuzzer_common.stamp $
+    ./mksnapshot.exe $
+    obj/multi_return_fuzzer.stamp $
+    obj/parser_fuzzer.stamp $
+    obj/postmortem-metadata.stamp $
+    obj/regexp_builtins_fuzzer.stamp $
+    obj/regexp_fuzzer.stamp $
+    obj/run_gen-regexp-special-case.stamp $
+    obj/run_mksnapshot_default.stamp $
+    obj/run_torque.stamp $
+    ./torque.exe $
+    ./torque-language-server.exe $
+    obj/torque_base.stamp $
+    obj/torque_generated_definitions.stamp $
+    obj/torque_generated_initializers.stamp $
+    obj/torque_ls_base.stamp $
+    obj/v8.stamp $
+    obj/v8_archive.stamp $
+    obj/v8_base.stamp $
+    obj/v8_base_without_compiler.stamp $
+    obj/v8_clusterfuzz.stamp $
+    obj/v8_compiler.stamp $
+    obj/v8_compiler_for_mksnapshot.stamp $
+    obj/v8_compiler_opt.stamp $
+    obj/v8_config_headers.stamp $
+    obj/v8_cppgc_shared.stamp $
+    obj/v8_cppgc_shared_for_testing.stamp $
+    obj/v8_dump_build_config.stamp $
+    obj/v8_for_testing.stamp $
+    obj/v8_fuzzers.stamp $
+    obj/v8_generated_cc_files.stamp $
+    obj/v8_headers.stamp $
+    ./v8_hello_world.exe $
+    obj/v8_init.stamp $
+    obj/v8_initializers.stamp $
+    obj/v8_libbase.lib $
+    obj/v8_libplatform.lib $
+    obj/v8_libsampler.stamp $
+    obj/v8_maybe_icu.stamp $
+    obj/v8_python_base.stamp $
+    ./v8_sample_process.exe $
+    obj/v8_shared_internal_headers.stamp $
+    ./v8_shell.exe $
+    ./v8_simple_inspector_fuzzer.exe $
+    ./v8_simple_json_fuzzer.exe $
+    ./v8_simple_multi_return_fuzzer.exe $
+    ./v8_simple_parser_fuzzer.exe $
+    ./v8_simple_regexp_builtins_fuzzer.exe $
+    ./v8_simple_regexp_fuzzer.exe $
+    ./v8_simple_wasm_async_fuzzer.exe $
+    ./v8_simple_wasm_code_fuzzer.exe $
+    ./v8_simple_wasm_compile_fuzzer.exe $
+    ./v8_simple_wasm_fuzzer.exe $
+    obj/v8_snapshot.stamp $
+    obj/v8_tracing.stamp $
+    obj/v8_version.stamp $
+    obj/v8_wrappers.stamp $
+    obj/wasm_async_fuzzer.stamp $
+    obj/wasm_code_fuzzer.stamp $
+    obj/wasm_compile_fuzzer.stamp $
+    obj/wasm_fuzzer.stamp $
+    obj/wasm_test_common.stamp $
+    obj/wee8.lib $
+    obj/build/branding_buildflags.stamp $
+    obj/build/buildflag_header_h.stamp $
+    obj/build/chromecast_buildflags.stamp $
+    obj/build/chromeos_buildflags.stamp $
+    obj/build/config/common_deps.stamp $
+    obj/build/config/executable_deps.stamp $
+    obj/build/config/loadable_module_deps.stamp $
+    obj/build/config/shared_library_deps.stamp $
+    obj/build/config/clang/llvm-symbolizer_data.stamp $
+    obj/build/config/compiler/compiler_buildflags.stamp $
+    obj/build/config/sanitizers/deps.stamp $
+    obj/build/config/sanitizers/options_sources.lib $
+    obj/build/win/copy_cdb_to_output.stamp $
+    obj/build/win/default_exe_manifest.stamp $
+    obj/build/win/runtime_libs.stamp $
+    obj/buildtools/third_party/libc++/libc++.stamp $
+    obj/src/inspector/inspector.stamp $
+    obj/src/inspector/inspector_string_conversions.stamp $
+    obj/src/inspector/inspector_test_headers.stamp $
+    obj/src/inspector/protocol_compatibility.stamp $
+    obj/src/inspector/protocol_generated_sources.stamp $
+    obj/src/inspector/v8_generated_cc_files.stamp $
+    obj/test/common_test_headers.stamp $
+    obj/test/gn_all.stamp $
+    obj/test/v8_bot_default.stamp $
+    obj/test/v8_d8_default.stamp $
+    obj/test/v8_default.stamp $
+    obj/test/v8_optimize_for_size.stamp $
+    obj/test/v8_perf.stamp $
+    obj/test/v8_run_num_fuzzer.stamp $
+    obj/test/benchmarks/v8_benchmarks.stamp $
+    obj/test/benchmarks/cpp/gn_all.stamp $
+    ./cctest.exe $
+    obj/test/cctest/cctest_headers.stamp $
+    obj/test/cctest/cctest_sources.stamp $
+    ./generate-bytecode-expectations.exe $
+    obj/test/debugger/v8_debugger.stamp $
+    obj/test/fuzzer/v8_fuzzer.stamp $
+    ./inspector-test.exe $
+    obj/test/inspector/inspector_test.stamp $
+    obj/test/intl/v8_intl.stamp $
+    obj/test/message/v8_message.stamp $
+    obj/test/mjsunit/v8_mjsunit.stamp $
+    ./mkgrokdump.exe $
+    obj/test/mozilla/v8_mozilla.stamp $
+    obj/test/test262/v8_test262.stamp $
+    obj/test/unittests/cppgc_unittests_sources.stamp $
+    ./unittests.exe $
+    obj/test/unittests/unittests_sources.stamp $
+    ./v8_cppgc_shared_unittests.exe $
+    obj/test/unittests/v8_cppgc_shared_unittests_sources.stamp $
+    ./wasm_api_tests.exe $
+    obj/test/wasm-js/v8_wasm_js.stamp $
+    obj/test/wasm-spec-tests/v8_wasm_spec_tests.stamp $
+    obj/test/webkit/v8_webkit.stamp $
+    obj/testing/gmock/gmock.stamp $
+    obj/testing/gmock/gmock_main.stamp $
+    obj/testing/gtest/gtest.lib $
+    obj/testing/gtest/gtest_main.stamp $
+    obj/third_party/googletest/gmock.stamp $
+    obj/third_party/googletest/gmock_main.lib $
+    obj/third_party/googletest/gtest.stamp $
+    obj/third_party/googletest/gtest_main.stamp $
+    obj/third_party/icu/extra_icudata.stamp $
+    obj/third_party/icu/icu.stamp $
+    obj/third_party/icu/icudata.stamp $
+    obj/third_party/icu/icui18n.lib $
+    obj/third_party/icu/icui18n_hidden_visibility.lib $
+    obj/third_party/icu/icuuc.lib $
+    obj/third_party/icu/icuuc_hidden_visibility.lib $
+    obj/third_party/inspector_protocol/crdtp.stamp $
+    obj/third_party/inspector_protocol/crdtp_platform.stamp $
+    obj/third_party/inspector_protocol/crdtp_test.stamp $
+    obj/third_party/inspector_protocol/crdtp_test_platform.stamp $
+    obj/third_party/zlib/minizip.lib $
+    obj/third_party/zlib/zlib.lib $
+    obj/third_party/zlib/zlib_adler32_simd.stamp $
+    ./zlib_bench.exe $
+    obj/third_party/zlib/zlib_common_headers.stamp $
+    obj/third_party/zlib/zlib_crc32_simd.stamp $
+    obj/third_party/zlib/zlib_inflate_chunk_simd.stamp $
+    obj/third_party/zlib/zlib_x86_simd.stamp $
+    obj/third_party/zlib/google/compression_utils_portable.lib $
+    obj/tools/gn_all.stamp $
+    obj/tools/v8_android_test_runner_deps.stamp $
+    obj/tools/v8_check_static_initializers.stamp $
+    obj/tools/v8_testrunner.stamp $
+    obj/tools/debug_helper/gen_heap_constants.stamp $
+    obj/tools/debug_helper/run_mkgrokdump.stamp $
+    obj/tools/debug_helper/v8_debug_helper.lib $
+    obj/tools/gcmole/v8_run_gcmole.stamp $
+    obj/tools/jsfunfuzz/v8_jsfunfuzz.stamp $
+    obj/tools/v8windbg/copy_prereqs.stamp $
+    ./v8windbg.dll.lib $
+    obj/tools/v8windbg/v8windbg_base.stamp $
+    obj/tools/v8windbg/v8windbg_test.stamp $
+    obj/tools/v8windbg/v8windbg_test_script.stamp
+
+default all
